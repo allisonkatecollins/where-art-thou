@@ -10,7 +10,7 @@ export default {
 }
 
 
-    .then(artItems => {
+  /*   .then(artItems => {
       artItems.forEach(result => {
         let artTitle = result.title
         let artistFirstName = result.first_name
@@ -20,3 +20,4 @@ export default {
         let artDescription = result.description
       })
     })
+ */
