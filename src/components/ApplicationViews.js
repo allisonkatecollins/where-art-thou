@@ -38,6 +38,7 @@ export default class ApplicationViews extends Component {
   //submit rating function
 
   render() {
+    console.log(this.state)
     return(
       <React.Fragment>
         <Route path="/browse" render={(props) => {
