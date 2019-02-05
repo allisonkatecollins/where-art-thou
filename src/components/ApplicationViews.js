@@ -16,3 +16,32 @@ import ToVisitCards from "./user-lists/to-visit/ToVisitCards";
 import ToVisitDetails from "./user-lists/to-visit/ToVisitDetails";
 import ToVisitList from "./user-lists/to-visit/ToVisitList";
 import MySavedArt from "./user-lists/MySavedArt"
+
+export default class ApplicationViews extends Component {
+  //set initial state
+  state = {
+    art: []
+  };
+
+  //authentication
+
+  componentDidMount() {
+    ExternalArtManager.getAll().then(allArt => {
+      this.setState({
+        art: allArt
+      })
+    })
+  }
+
+  //add to list function
+  //update list function
+  //submit rating function
+
+  render() {
+    return(
+      <React.Fragment>
+        
+      </React.Fragment>
+    )
+  }
+}
