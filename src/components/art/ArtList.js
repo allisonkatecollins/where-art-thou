@@ -1,9 +1,30 @@
-import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import React, { Component } from 'react';
+//import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import "./Art.css"
+
+export default class ArtList extends Component {
+  render() {
+    //console.log(this.art.title)
+    return(
+      <React.Fragment>
+        <section className="allArt">
+        {
+          this.props.art.map(artItem => 
+            <div className="artCard" key={artItem.title}>
+              <p>{artItem.title}</p>
+              <p>{artItem.location}</p>
+            </div>
+          )
+        }
+        </section>
+      </React.Fragment>
+    )
+  }
+}
 
 
 //code from reactstrap for dropdown menu
-export default class Example extends React.Component {
+/* export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,4 +58,4 @@ export default class Example extends React.Component {
       </Dropdown>
     );
   }
-}
+} */

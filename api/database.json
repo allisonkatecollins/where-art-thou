@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Hernando",
+      "password": "yomama"
+    },
+    {
+      "id": 2,
+      "userName": "Lorenzo",
+      "password": "yomama"
+    }
+  ],
+  "savedArt": [
+    {
+      "id": 1,
+      "externalAPIId": 1,
+      "visited": true,
+      "rating": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "externalAPIId": 2,
+      "visited": true,
+      "rating": 1,
+      "userId": 1
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "pngLink": "",
+      "externalAPIId": 1
+    },
+    {
+      "id": 2,
+      "pngLink": "",
+      "externalAPIId": 2
+    }
+  ]
+}
