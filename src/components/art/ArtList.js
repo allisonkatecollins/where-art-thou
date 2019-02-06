@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+//import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./Art.css"
 
 export default class ArtList extends Component {
   render() {
+    //console.log(this.art.title)
     return(
       <React.Fragment>
         <section className="allArt">
         {
-          this.props.art.map(art =>
-            <div className="artCard" key={art.title}></div>
-            
-            )
+          this.props.art.map(artItem => 
+            <div className="artCard" key={artItem.title}>
+              <p>{artItem.title}</p>
+              <p>{artItem.location}</p>
+            </div>
+          )
         }
-
         </section>
       </React.Fragment>
     )
