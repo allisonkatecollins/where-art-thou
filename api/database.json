@@ -25,6 +25,13 @@
       "visited": true,
       "rating": 1,
       "userId": 1
+    },
+    {
+      "id": 3,
+      "externalAPIId": 3,
+      "visited": false,
+      "rating": 1,
+      "userId": 1
     }
   ],
   "photos": [
