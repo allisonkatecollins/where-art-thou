@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 //import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import "./Art.css"
+//import "./Art.css"
 
-export default class ArtList extends Component {
+export default class BrowseExternalArt extends Component {
   render() {
     //console.log(this.art.title)
     //need Add to List button, which will call the post function
@@ -14,8 +14,9 @@ export default class ArtList extends Component {
             <div className="artCard" key={artItem.title}>
               <p>{artItem.title}</p>
               <p>{artItem.location}</p>
-              <button type = "submit">Add to List</button>
-            </div>
+              <button type = "submit" onClick={() => 
+                this.props.addToList((this.props.userId), (artItem.title))}>Add to List</button>
+            </div> 
           )
         }
         </section>

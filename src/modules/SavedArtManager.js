@@ -7,14 +7,14 @@ export default {
     return fetch(`${remoteURL}/savedArt`).then(res => res.json())
   },
   //add art to "To Visit" list - button function
-  postToVisit(toVisit) {
-    return fetch(`${remoteURL}/savedArt?visited=false`, {
+  postToVisit(userId, title) {
+    return fetch(`${remoteURL}/savedArt`, {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON"
       },
-      body: JSON.stringify(toVisit)
-    }).then(data => data.json())
+      body: JSON.stringify({userId:userId, title:title, rating:0, visited:false})
+    }).then(data => data.json()).then(() => (alert("Art added to list!")))
   },
   //add art to "Have Visited" list - checkbox function
 }

@@ -32,6 +32,20 @@
       "visited": false,
       "rating": 1,
       "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Wind Reeds",
+      "rating": 0,
+      "visited": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 9
     }
   ],
   "photos": [
