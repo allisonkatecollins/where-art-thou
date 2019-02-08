@@ -1,6 +1,7 @@
 //connects have visited and to visit
 //checkbox functionality
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 export default class MySavedArt extends Component {
   state = {
     complete: false
@@ -42,17 +43,9 @@ export default class MySavedArt extends Component {
                 </div>
               }}
             )
-            
-            
-            /* filter(savedArt =>
-              savedArt.visited === true)
-              .map(savedArt => 
-                <div key={savedArt.id}>
-                <p>{savedArt.title}</p>
-              </div>
-              ) */
         } 
         </section>
+        <Link className="nav-link back" to={"/browse"}>Back to Browse</Link>
       </React.Fragment>
     )
   }

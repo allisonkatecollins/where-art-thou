@@ -25,5 +25,9 @@ export default {
       },
       body: JSON.stringify(visitedArt)
     }).then(data => data.json())
-  }
+  },
+
+  /* visitedArt() {
+    return fetch(`${remoteURL}/savedArt?visited=true`).then(res => res.json())
+  } */
 }

@@ -14,19 +14,13 @@
   "savedArt": [
     {
       "title": "Roy Orbison Tribute Statue",
-      "visited": true,
+      "visited": false,
       "userId": 1,
       "id": 5
     },
     {
-      "savedArt": "Wind Reeds",
-      "visited": true,
-      "userId": 1,
-      "id": 13
-    },
-    {
       "title": "St. George and the Maiden",
-      "visited": true,
+      "visited": false,
       "userId": 1,
       "id": 10
     },
@@ -43,10 +37,9 @@
       "id": 12
     },
     {
-      "userId": 1,
       "title": "Coach Ed Temple",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": 1,
       "id": 14
     },
     {
