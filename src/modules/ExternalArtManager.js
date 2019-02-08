@@ -1,11 +1,10 @@
 //app token: Kz4LSqMRqLWAeW1Wots3n7zfR
 //secret token: KZgVmE_GRT2jXfTnUe-C_Haef4DNTUbuxEaX
 
-const url = "https://data.nashville.gov/resource/xakp-ess3.json?$$app_token=Kz4LSqMRqLWAeW1Wots3n7zfR"
-
 export default {
   getAll() {
-    return fetch(`${url}`).then(response => response.json())
+    return fetch("https://data.nashville.gov/resource/xakp-ess3.json?$$app_token=Kz4LSqMRqLWAeW1Wots3n7zfR")
+    .then(response => response.json())
   }
 }
 

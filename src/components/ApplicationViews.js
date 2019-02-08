@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import ExternalArtManager from "../modules/ExternalArtManager";
 //import LoginManager from "../modules/LoginManager";
-//import PhotoManager from "../modules/PhotoManager";
-import SavedArtManager from "../modules/SavedArtManager";
-//import ArtCards from "./art/ArtCards";
-//import ArtDetails from "./art/ArtDetails"; 
-import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 //import Login from "./authentication/Login";
 //import LoginForm from "./authentication/LoginForm";
+import LandingPage from "./LandingPage"
+import ExternalArtManager from "../modules/ExternalArtManager";
+import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
+//import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
+import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
-//import SavedArtDetails.js from "./user-lists/SavedArtDetails"
+//import SavedArtDetails from "./user-lists/SavedArtDetails"
+//import PhotoManager from "../modules/PhotoManager";
 
 export default class ApplicationViews extends Component {
   //set initial state
@@ -36,18 +36,26 @@ export default class ApplicationViews extends Component {
     })
   }
 
-  //add to list function - button function
+  //add to list - button function on /browse
   addToList = (userId, title) => SavedArtManager.postToVisit(userId, title)
     .then(() => SavedArtManager.getAll())
     .then(artItems => this.setState({
       savedArt: artItems})
     )
-  //update list function
-  //submit rating function
+  //update list - checkmark function on /lists
+  //delete from list - button function on /lists
 
   render() {
     return(
       <React.Fragment>
+        {/* <Route path="/" render={(props) => {
+          return <Redirect to="/home" />
+        }} /> */}
+
+        <Route path="/home" render={(props) => {
+          return <LandingPage {...props} />
+        }} />
+
         <Route path="/browse" render={(props) => {
           return <BrowseExternalArt {...props} 
           art={this.state.art}
