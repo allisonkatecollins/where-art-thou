@@ -17,4 +17,13 @@ export default {
     }).then(data => data.json()).then(() => (alert("Art added to list!")))
   },
   //add art to "Have Visited" list - checkbox function
+  editToVisit(savedArtId, visitedArt) {
+    return fetch(`${remoteURL}/savedArt/${savedArtId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/JSON"
+      },
+      body: JSON.stringify(visitedArt)
+    }).then(data => data.json())
+  }
 }
