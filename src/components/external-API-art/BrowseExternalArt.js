@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 
 export default class BrowseExternalArt extends Component {
   render() {
-    //console.log(this.art.title)
-    //need Add to List button, which will call the post function
     return(
       <React.Fragment>
         <section className="allArt">

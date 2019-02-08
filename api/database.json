@@ -13,39 +13,47 @@
   ],
   "savedArt": [
     {
-      "id": 1,
-      "title": "mural",
-      "visited": true,
-      "rating": 1,
-      "userId": 1
-    },
-    {
-      "id": 2,
-      "title": "sculpture",
-      "visited": true,
-      "rating": 1,
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "title": "bronze",
-      "visited": false,
-      "rating": 1,
-      "userId": 1
-    },
-    {
-      "userId": 1,
-      "title": "Wind Reeds",
-      "rating": 0,
-      "visited": false,
-      "id": 8
-    },
-    {
-      "userId": 1,
       "title": "Roy Orbison Tribute Statue",
+      "visited": true,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "savedArt": "Wind Reeds",
+      "visited": true,
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "title": "St. George and the Maiden",
+      "visited": true,
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "title": "Maybelle Carter",
+      "visited": true,
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "title": "Confluence",
+      "visited": true,
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Coach Ed Temple",
       "rating": 0,
       "visited": false,
-      "id": 9
+      "id": 14
+    },
+    {
+      "title": "Raccoons and the Magic Horseshoes",
+      "visited": true,
+      "userId": 1,
+      "id": 15
     }
   ],
   "photos": [

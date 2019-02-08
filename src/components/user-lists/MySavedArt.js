@@ -1,15 +1,14 @@
 //connects have visited and to visit
-//make cards here and call them in have visited / to visit
 //checkbox functionality
-
 import React, { Component } from 'react'
-//import HaveVisitedList from "./user-lists/have-visited/HaveVisitedList"
-
-
 export default class MySavedArt extends Component {
+  state = {
+    complete: false
+  }
+  
   render() {
     return(
-      <>
+      <React.Fragment>
         <section className="artToVisit">
         <h2>TO VISIT</h2>
           {
@@ -18,7 +17,16 @@ export default class MySavedArt extends Component {
               .map(savedArt => 
                 <div key={savedArt.id}>
                   <p>{savedArt.title}</p>
-                  <p>{savedArt.location}</p>
+                  <button type ="submit"
+                    //on click of checkbox - change value of visited to false
+                    //art item should move to have visited list
+                    onClick={() => {
+                      const visitedArt = {
+                        title: savedArt.title,
+                        visited: !this.state.visited,
+                        userId: 1
+                      }
+                      this.props.updateList(savedArt.id, visitedArt)}}>I've been here!</button>
                 </div>
               )
           }
@@ -26,39 +34,26 @@ export default class MySavedArt extends Component {
         <section className="artHaveVisited">
         <h2>HAVE VISITED</h2>
         {
-            this.props.savedArt.filter(savedArt =>
+            this.props.savedArt.map(savedArt => {
+              console.log(savedArt)
+              if(savedArt.visited === true) {
+                return <div key={savedArt.id}>
+                <p>{savedArt.title}</p>
+                </div>
+              }}
+            )
+            
+            
+            /* filter(savedArt =>
               savedArt.visited === true)
               .map(savedArt => 
                 <div key={savedArt.id}>
                 <p>{savedArt.title}</p>
-                <p>{savedArt.location}</p>
               </div>
-              )
-          }
+              ) */
+        } 
         </section>
-       {/*  <section className="mySavedArt">
-          {
-            this.props.art.map(savedArt =>
-              <div className="savedArtCard" key={savedArt.id}>
-                <h2> {savedArt.title} </h2>
-                <h3> {savedArt.location} </h3> 
-                <p>I've been here! <input id={savedArt.id}
-                type="checkbox"
-                //on click of checkbox - change value of visited to true
-                /* onClick={() => {
-                  const visitedArt = {
-                    art: savedArt.title,
-                    visited: this.state.visited,
-                    userId: 1
-                  }
-                }} 
-                  />
-                </p>
-              </div>
-            )
-          
-        </section>  */}
-      </>
+      </React.Fragment>
     )
   }
 }

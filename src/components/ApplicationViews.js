@@ -42,7 +42,21 @@ export default class ApplicationViews extends Component {
     .then(artItems => this.setState({
       savedArt: artItems})
     )
-  //update list - checkmark function on /lists
+
+  //update list - button function on /lists
+  updateList = (savedArtId, visitedArt) => {
+    return SavedArtManager.editToVisit(savedArtId, visitedArt)
+    .then(() => SavedArtManager.getAll())
+    .then(allSavedArt => {
+      let haveVisited = allSavedArt.filter(art => {
+        return art.visited === false
+      })
+      this.setState({
+        art: haveVisited
+      })
+    })
+  }
+
   //delete from list - button function on /lists
 
   render() {
@@ -66,7 +80,8 @@ export default class ApplicationViews extends Component {
         <Route path="/lists" render={(props) => {
           return <MySavedArt {...props}
 /*           art={this.state.art} */
-          savedArt={this.state.savedArt} />
+          savedArt={this.state.savedArt}
+          updateList={this.updateList} />
         }} />
 
       </React.Fragment>
