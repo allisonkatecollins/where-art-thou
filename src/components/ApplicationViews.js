@@ -6,20 +6,18 @@ import ExternalArtManager from "../modules/ExternalArtManager";
 import SavedArtManager from "../modules/SavedArtManager";
 //import ArtCards from "./art/ArtCards";
 //import ArtDetails from "./art/ArtDetails"; 
-import ArtList from "./art/ArtList";
+import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 //import Login from "./authentication/Login";
 //import LoginForm from "./authentication/LoginForm";
-//import HaveVisitedDetails from "./user-lists/have-visited/HaveVisitedDetails";
-//import HaveVisitedList from "./user-lists/have-visited/HaveVisitedList";
-//import ToVisitDetails from "./user-lists/to-visit/ToVisitDetails";
-//import ToVisitList from "./user-lists/to-visit/ToVisitList";
 import MySavedArt from "./user-lists/MySavedArt" 
+//import SavedArtDetails.js from "./user-lists/SavedArtDetails"
 
 export default class ApplicationViews extends Component {
   //set initial state
   state = {
     art: [],
-    savedArt: []
+    savedArt: [],
+    userId: 1
   };
 
   //authentication
@@ -38,12 +36,11 @@ export default class ApplicationViews extends Component {
     })
   }
 
-  //add to list function
-  addToList = (art) => SavedArtManager.postToList(art)
+  //add to list function - button function
+  addToList = (userId, title) => SavedArtManager.postToVisit(userId, title)
     .then(() => SavedArtManager.getAll())
     .then(artItems => this.setState({
-      art: artItems
-    })
+      savedArt: artItems})
     )
   //update list function
   //submit rating function
@@ -52,9 +49,10 @@ export default class ApplicationViews extends Component {
     return(
       <React.Fragment>
         <Route path="/browse" render={(props) => {
-          return <ArtList {...props} 
+          return <BrowseExternalArt {...props} 
           art={this.state.art}
-          addToList={this.addToList}  />
+          addToList={this.addToList}
+          userId={this.state.userId}  />
         }} />
 
         <Route path="/lists" render={(props) => {
