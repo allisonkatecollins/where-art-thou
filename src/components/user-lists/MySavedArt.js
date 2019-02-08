@@ -11,19 +11,29 @@ export default class MySavedArt extends Component {
     return(
       <>
         <section className="artToVisit">
+        <h2>TO VISIT</h2>
           {
             this.props.savedArt.filter(savedArt =>
               savedArt.visited === false)
               .map(savedArt => 
-                <p key={savedArt.id}>{savedArt.title}</p>)
+                <div key={savedArt.id}>
+                  <p>{savedArt.title}</p>
+                  <p>{savedArt.location}</p>
+                </div>
+              )
           }
         </section>
         <section className="artHaveVisited">
+        <h2>HAVE VISITED</h2>
         {
             this.props.savedArt.filter(savedArt =>
               savedArt.visited === true)
               .map(savedArt => 
-                <p key={savedArt.id}>{savedArt.title}</p>)
+                <div key={savedArt.id}>
+                <p>{savedArt.title}</p>
+                <p>{savedArt.location}</p>
+              </div>
+              )
           }
         </section>
        {/*  <section className="mySavedArt">

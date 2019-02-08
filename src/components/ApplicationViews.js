@@ -59,7 +59,7 @@ export default class ApplicationViews extends Component {
 
         <Route path="/lists" render={(props) => {
           return <MySavedArt {...props}
-          art={this.state.art}
+/*           art={this.state.art} */
           savedArt={this.state.savedArt} />
         }} />
 

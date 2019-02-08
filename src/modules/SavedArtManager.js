@@ -6,7 +6,7 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/savedArt`).then(res => res.json())
   },
-  //add art to "To Visit" list
+  //add art to "To Visit" list - button function
   postToVisit(toVisit) {
     return fetch(`${remoteURL}/savedArt?visited=false`, {
       method: "POST",
@@ -16,5 +16,5 @@ export default {
       body: JSON.stringify(toVisit)
     }).then(data => data.json())
   },
-  //add art to "Have Visited" list
+  //add art to "Have Visited" list - checkbox function
 }
