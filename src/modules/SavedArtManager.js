@@ -6,14 +6,15 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/savedArt`).then(res => res.json())
   },
-  //add event to list
-  postToList(savedArt) {
-    return fetch(`${remoteURL}/savedArt`, {
+  //add art to "To Visit" list
+  postToVisit(toVisit) {
+    return fetch(`${remoteURL}/savedArt?visited=false`, {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON"
       },
-      body: JSON.stringify(savedArt)
+      body: JSON.stringify(toVisit)
     }).then(data => data.json())
-  }
+  },
+  //add art to "Have Visited" list
 }

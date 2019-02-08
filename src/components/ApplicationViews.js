@@ -33,7 +33,7 @@ export default class ApplicationViews extends Component {
 
     SavedArtManager.getAll().then(savedArt => {
       this.setState({
-        art: savedArt
+        savedArt: savedArt
       })
     })
   }
@@ -59,7 +59,8 @@ export default class ApplicationViews extends Component {
 
         <Route path="/lists" render={(props) => {
           return <MySavedArt {...props}
-          art={this.state.art} />
+          art={this.state.art}
+          savedArt={this.state.savedArt} />
         }} />
 
       </React.Fragment>
