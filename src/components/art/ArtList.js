@@ -5,6 +5,7 @@ import "./Art.css"
 export default class ArtList extends Component {
   render() {
     //console.log(this.art.title)
+    //need Add to List button, which will call the post function
     return(
       <React.Fragment>
         <section className="allArt">
@@ -13,6 +14,7 @@ export default class ArtList extends Component {
             <div className="artCard" key={artItem.title}>
               <p>{artItem.title}</p>
               <p>{artItem.location}</p>
+              <button type = "submit">Add to List</button>
             </div>
           )
         }

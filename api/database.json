@@ -14,15 +14,22 @@
   "savedArt": [
     {
       "id": 1,
-      "externalAPIId": 1,
+      "title": "mural",
       "visited": true,
       "rating": 1,
       "userId": 1
     },
     {
       "id": 2,
-      "externalAPIId": 2,
+      "title": "sculpture",
       "visited": true,
+      "rating": 1,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "bronze",
+      "visited": false,
       "rating": 1,
       "userId": 1
     }
