@@ -53,6 +53,26 @@
       "visited": true,
       "userId": 1,
       "id": 17
+    },
+    {
+      "title": "Anticipation",
+      "visited": true,
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "title": "Blowing Bubbles",
+      "rating": 0,
+      "visited": false,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "title": "Anticipation",
+      "rating": 0,
+      "visited": false,
+      "id": 20
     }
   ],
   "photos": [
