@@ -43,13 +43,6 @@
       "id": 12
     },
     {
-      "userId": 1,
-      "title": "Coach Ed Temple",
-      "rating": 0,
-      "visited": false,
-      "id": 14
-    },
-    {
       "title": "Raccoons and the Magic Horseshoes",
       "visited": true,
       "userId": 1,
