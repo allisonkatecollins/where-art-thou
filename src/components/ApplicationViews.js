@@ -54,6 +54,7 @@ export default class ApplicationViews extends Component {
       this.setState({
         art: haveVisited
       })
+      window.location.reload()
     })
   }
 
