@@ -49,10 +49,9 @@
       "id": 15
     },
     {
-      "userId": 1,
       "title": "A Splash of Color",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": 1,
       "id": 16
     }
   ],
