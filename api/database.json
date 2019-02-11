@@ -19,12 +19,6 @@
       "id": 5
     },
     {
-      "savedArt": "Wind Reeds",
-      "visited": true,
-      "userId": 1,
-      "id": 13
-    },
-    {
       "title": "St. George and the Maiden",
       "visited": true,
       "userId": 1,
@@ -49,11 +43,16 @@
       "id": 15
     },
     {
-      "userId": 1,
       "title": "The Flutist",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": 1,
       "id": 16
+    },
+    {
+      "title": "The Flutist",
+      "visited": true,
+      "userId": 1,
+      "id": 17
     }
   ],
   "photos": [

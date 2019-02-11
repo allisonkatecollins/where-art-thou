@@ -34,6 +34,13 @@ export default class ApplicationViews extends Component {
         savedArt: savedArt
       })
     })
+
+   /*  SavedArtManager.visitedArt().then(savedArt => {
+      this.setState({
+        savedArt: savedArt,
+        art: savedArt
+      })
+    }) */
   }
 
   //add to list - button function on /browse
@@ -54,6 +61,8 @@ export default class ApplicationViews extends Component {
       this.setState({
         art: haveVisited
       })
+      //page automatically refreshes when item moved to "have visited" list
+      window.location.reload()
     })
   }
 
