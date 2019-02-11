@@ -37,12 +37,6 @@
       "id": 12
     },
     {
-      "title": "Coach Ed Temple",
-      "visited": true,
-      "userId": 1,
-      "id": 14
-    },
-    {
       "title": "Raccoons and the Magic Horseshoes",
       "visited": true,
       "userId": 1,
@@ -50,7 +44,7 @@
     },
     {
       "userId": 1,
-      "title": "A Splash of Color",
+      "title": "The Flutist",
       "rating": 0,
       "visited": false,
       "id": 16

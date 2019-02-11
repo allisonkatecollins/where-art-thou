@@ -26,8 +26,14 @@ export default {
       body: JSON.stringify(visitedArt)
     }).then(data => data.json())
   },
-
-  /* visitedArt() {
-    return fetch(`${remoteURL}/savedArt?visited=true`).then(res => res.json())
-  } */
+  //delete art from "To Visit list" - button function
+  deleteItem(savedArtId, visitedArt) {
+    return fetch(`${remoteURL}/savedArt/${savedArtId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/JSON"
+      },
+      body: JSON.stringify(visitedArt)
+    }).then(data => data.json())
+  }
 }
