@@ -61,6 +61,8 @@ export default class ApplicationViews extends Component {
       this.setState({
         art: haveVisited
       })
+      //page automatically refreshes when item moved to "have visited" list
+      window.location.reload()
     })
   }
 

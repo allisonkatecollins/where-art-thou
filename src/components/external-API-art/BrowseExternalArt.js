@@ -7,6 +7,7 @@ export default class BrowseExternalArt extends Component {
   render() {
     return(
       <React.Fragment>
+        <h2>BROWSE ALL ART</h2>
         <Link className="nav-link back" to={"/lists"}>Back to My Saved Art</Link>
         <section className="allArt">
         {
