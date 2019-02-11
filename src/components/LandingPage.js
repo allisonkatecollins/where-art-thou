@@ -2,23 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class LandingPage extends Component {
-
- /*  state = {
-    redirect: false
-  }
-
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    })
-  }
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/browse' />
-    }
-  }
- */
   render() {
     return(
       <React.Fragment>
@@ -38,4 +21,3 @@ export default class LandingPage extends Component {
     )
   }
 }
-//card with button routing to /lists

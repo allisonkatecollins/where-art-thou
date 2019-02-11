@@ -1,6 +1,7 @@
 //connects have visited and to visit
 //checkbox functionality
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 export default class MySavedArt extends Component {
   state = {
     complete: false
@@ -17,9 +18,10 @@ export default class MySavedArt extends Component {
               .map(savedArt => 
                 <div key={savedArt.id}>
                   <p>{savedArt.title}</p>
-                  <button type ="submit"
-                    //on click of checkbox - change value of visited to false
-                    //art item should move to have visited list
+                  <button type="submit"
+                          id="updateButton"
+                  //on click of button - change value of visited to false
+                  //art item should move to "Have Visited" list
                     onClick={() => {
                       const visitedArt = {
                         title: savedArt.title,
@@ -27,6 +29,12 @@ export default class MySavedArt extends Component {
                         userId: 1
                       }
                       this.props.updateList(savedArt.id, visitedArt)}}>I've been here!</button>
+                  <button type ="submit"
+                          id="deleteButton"
+                  //on click of button - remove item from "To Visit" list
+                    onClick={() => this.props.deleteItem(savedArt.id)}>
+                      Remove from List
+                    </button>
                 </div>
               )
           }
@@ -42,17 +50,9 @@ export default class MySavedArt extends Component {
                 </div>
               }}
             )
-            
-            
-            /* filter(savedArt =>
-              savedArt.visited === true)
-              .map(savedArt => 
-                <div key={savedArt.id}>
-                <p>{savedArt.title}</p>
-              </div>
-              ) */
         } 
         </section>
+        <Link className="nav-link back" to={"/browse"}>Back to Browse</Link>
       </React.Fragment>
     )
   }

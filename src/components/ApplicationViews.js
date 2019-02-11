@@ -58,6 +58,12 @@ export default class ApplicationViews extends Component {
   }
 
   //delete from list - button function on /lists
+  deleteItem = (id) => {
+    return SavedArtManager.deleteItem(id)
+      .then(artItem => this.setState({
+        art: artItem
+      }))
+  }
 
   render() {
     return(
@@ -81,7 +87,8 @@ export default class ApplicationViews extends Component {
           return <MySavedArt {...props}
 /*           art={this.state.art} */
           savedArt={this.state.savedArt}
-          updateList={this.updateList} />
+          updateList={this.updateList}
+          deleteItem={this.deleteItem} />
         }} />
 
       </React.Fragment>
