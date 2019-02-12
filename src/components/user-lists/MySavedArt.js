@@ -17,7 +17,7 @@ export default class MySavedArt extends Component {
               savedArt.visited === false)
               .map(savedArt => 
                 <div key={savedArt.id}>
-                  <p>{savedArt.title}</p>
+                  <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
                   <button type="submit"
                           id="updateButton"
                   //on click of button - change value of visited to false
@@ -46,7 +46,7 @@ export default class MySavedArt extends Component {
               console.log(savedArt)
               if(savedArt.visited === true) {
                 return <div key={savedArt.id}>
-                <p>{savedArt.title}</p>
+                <Link className="to-details-page" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
                 </div>
               }}
             )

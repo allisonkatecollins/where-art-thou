@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 import LandingPage from "./LandingPage"
 import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
-//import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
+import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
 //import SavedArtDetails from "./user-lists/SavedArtDetails"
@@ -34,16 +34,9 @@ export default class ApplicationViews extends Component {
         savedArt: savedArt
       })
     })
-
-   /*  SavedArtManager.visitedArt().then(savedArt => {
-      this.setState({
-        savedArt: savedArt,
-        art: savedArt
-      })
-    }) */
   }
 
-  //add to list - button function on /browse
+  //add to list - button function on /browse and on /externalArtDetails
   addToList = (userId, title) => SavedArtManager.postToVisit(userId, title)
     .then(() => SavedArtManager.getAll())
     .then(artItems => this.setState({
@@ -85,11 +78,18 @@ export default class ApplicationViews extends Component {
           return <LandingPage {...props} />
         }} />
 
-        <Route path="/browse" render={(props) => {
+        <Route exact path="/browse" render={(props) => {
           return <BrowseExternalArt {...props} 
           art={this.state.art}
           addToList={this.addToList}
           userId={this.state.userId}  />
+        }} />
+
+        <Route path="/browse/:title" render={(props) => {
+          console.log("test")
+          return( <ExternalArtDetails {...props}
+          art={this.state.art}
+          addToList={this.addToList} />)
         }} />
 
         <Route path="/lists" render={(props) => {

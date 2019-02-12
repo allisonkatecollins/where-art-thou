@@ -12,8 +12,9 @@ export default class BrowseExternalArt extends Component {
         <section className="allArt">
         {
           this.props.art.map(artItem => 
+            //on click of art title, page routes to details page
             <div className="artCard" key={artItem.title}>
-              <p>{artItem.title}</p>
+              <Link className="nav-link" to={`/browse/${artItem.title}`}>{artItem.title}</Link>
               <p>{artItem.location}</p>
               <button type = "submit" onClick={() => 
                 this.props.addToList((this.props.userId), (artItem.title))}>Add to List</button>
