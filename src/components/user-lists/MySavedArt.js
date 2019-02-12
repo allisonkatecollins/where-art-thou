@@ -46,7 +46,7 @@ export default class MySavedArt extends Component {
               console.log(savedArt)
               if(savedArt.visited === true) {
                 return <div key={savedArt.id}>
-                <Link classname="to-details-page" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
+                <Link className="to-details-page" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
                 </div>
               }}
             )

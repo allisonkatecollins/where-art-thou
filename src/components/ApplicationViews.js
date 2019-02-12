@@ -34,13 +34,6 @@ export default class ApplicationViews extends Component {
         savedArt: savedArt
       })
     })
-
-   /*  SavedArtManager.visitedArt().then(savedArt => {
-      this.setState({
-        savedArt: savedArt,
-        art: savedArt
-      })
-    }) */
   }
 
   //add to list - button function on /browse and on /externalArtDetails
