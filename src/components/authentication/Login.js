@@ -23,9 +23,9 @@ export default class Login extends Component {
     evt.preventDefault();
     this.props.verifyUser(this.state.username, this.state.password)
     //currently alert pops up no matter what the user input is
-      if(this.props.users.length < 1) {
+      /* if(this.props.users.length < 1) {
         alert("We can't seem to find you! Try registering below")
-      } else {
+      } else { */
         this.props.users.forEach(user => {
             let loggedIn= false;
             if (this.state.username === user.username && this.state.password === user.password) {
@@ -38,7 +38,7 @@ export default class Login extends Component {
             this.props.history.push("/home");
             }
         })
-    }
+   /*  } */
     
     /* .then(user => {
         console.log("userArray:", user)

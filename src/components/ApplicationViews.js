@@ -37,6 +37,7 @@ export default class ApplicationViews extends Component {
       this.setState({
         users: allUsers
       })
+      console.log(this.state.users)
     })
   }
   
@@ -47,15 +48,18 @@ export default class ApplicationViews extends Component {
   registerUser(username, password) {
     LoginManager.getUsers(username, password)
   }
-  getUsers() {
-    return LoginManager.getUsers("users")
-  }
-  postUser(newUser) {
+  /* getUsers = () => {
+    LoginManager.getUsers("users")
+      .then(response => this.setState({
+        users: response
+      }))
+  } */
+  postUser = (newUser) => {
     return LoginManager.postUser(newUser)
       .then(() => LoginManager.getUsers("users"))
   }
   verifyUser = (username, password) => {
-    return LoginManager.findUser(username, password)
+     LoginManager.findUser(username, password)
       .then(allUsers => this.setState({
         users: allUsers
       }))
@@ -93,12 +97,14 @@ export default class ApplicationViews extends Component {
   }
 
   render() {
+    console.log("render:", this.state.users)
     return(
       <React.Fragment>
         <Route exact path="/" render={(props) => {
           return <Login {...props} 
           verifyUser={this.verifyUser}
-          users={this.state.users} />
+          users={this.state.users} 
+          getUsers={this.getUsers}/>
         }} />
 
         <Route exact path="/register" render={(props) => {
