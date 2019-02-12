@@ -11,16 +11,3 @@ export default {
     .then(response => response.json())
   }
 }
-
-
-  /*   .then(artItems => {
-      artItems.forEach(result => {
-        let artTitle = result.title
-        let artistFirstName = result.first_name
-        let artistLastName = result.last_name
-        let artLocation = result.location
-        let artMedium = result.medium
-        let artDescription = result.description
-      })
-    })
- */
