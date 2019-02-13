@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-//import LoginManager from "../modules/LoginManager";
-//import Login from "./authentication/Login";
-//import LoginForm from "./authentication/LoginForm";
+import LoginManager from "../modules/LoginManager";
+import Login from "./authentication/Login";
+import Registration from "./authentication/Registration";
 import LandingPage from "./LandingPage"
 import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
-//import SavedArtDetails from "./user-lists/SavedArtDetails"
 //import PhotoManager from "../modules/PhotoManager";
 
 export default class ApplicationViews extends Component {
@@ -17,23 +16,50 @@ export default class ApplicationViews extends Component {
   state = {
     art: [],
     savedArt: [],
-    userId: 1
+    users: []
   };
 
-  //authentication
-
+  
   componentDidMount() {
     ExternalArtManager.getAll().then(allArt => {
       this.setState({
         art: allArt
       })
     })
-
+    
     SavedArtManager.getAll().then(savedArt => {
       this.setState({
         savedArt: savedArt
       })
     })
+    
+    LoginManager.getUsers().then(allUsers => {
+      this.setState({
+        users: allUsers
+      })
+      console.log("componentDidMount:", this.state.users)
+    })
+  }
+  
+  //authentication
+  isAuthenticated = () => sessionStorage.getItem("User") !==null
+
+  //login and registration
+  registerUser(username, password) {
+    LoginManager.getUsers(username, password)
+  }
+  getUsers = () => {
+    return LoginManager.getUsers("users")
+     /*  .then(response => this.setState({
+        users: response
+      })) */
+  } 
+  postUser = (newUser) => {
+    return LoginManager.postUser(newUser)
+      .then(() => LoginManager.getUsers("users"))
+  }
+  verifyUser = (username, password) => {
+    return LoginManager.findUser(username, password)
   }
 
   //add to list - button function on /browse and on /externalArtDetails
@@ -68,14 +94,25 @@ export default class ApplicationViews extends Component {
   }
 
   render() {
+    console.log("render:", this.state.users)
     return(
       <React.Fragment>
-        {/* <Route path="/" render={(props) => {
-          return <Redirect to="/home" />
-        }} /> */}
+        <Route exact path="/" render={(props) => {
+          return <Login {...props} 
+          verifyUser={this.verifyUser}
+          users={this.state.users} 
+          getUsers={this.getUsers}/>
+        }} />
 
-        <Route path="/home" render={(props) => {
-          return <LandingPage {...props} />
+        <Route exact path="/register" render={(props) => {
+          return <Registration {...props} 
+          getUsers={this.getUsers}
+          postUser={this.postUser} />
+        }} />
+
+        <Route exact path="/home" render={(props) => {
+          return <LandingPage {...props} 
+          users={this.state.users} />
         }} />
 
         <Route exact path="/browse" render={(props) => {
@@ -85,14 +122,14 @@ export default class ApplicationViews extends Component {
           userId={this.state.userId}  />
         }} />
 
-        <Route path="/browse/:title" render={(props) => {
+        <Route exact path="/browse/:title" render={(props) => {
           console.log("test")
           return( <ExternalArtDetails {...props}
           art={this.state.art}
           addToList={this.addToList} />)
         }} />
 
-        <Route path="/lists" render={(props) => {
+        <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}
 /*           art={this.state.art} */
           savedArt={this.state.savedArt}

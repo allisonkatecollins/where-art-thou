@@ -1,14 +1,52 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "Hernando",
-      "password": "yomama"
+      "name": "Allison",
+      "username": "ilovemusic@aol.com",
+      "password": "123",
+      "id": 1
     },
     {
-      "id": 2,
-      "userName": "Lorenzo",
-      "password": "yomama"
+      "name": "Allison",
+      "username": "allisoncollins",
+      "password": "",
+      "id": 2
+    },
+    {
+      "name": "Allison Collins",
+      "username": "test",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "al",
+      "username": "alcollins",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "Allison",
+      "username": "b",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "Allison",
+      "username": "newwwww",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "please",
+      "username": "pleasework",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "name": "hi",
+      "username": "newuser",
+      "password": "123",
+      "id": 8
     }
   ],
   "savedArt": [
