@@ -50,9 +50,6 @@ export default class ApplicationViews extends Component {
   }
   getUsers = () => {
     return LoginManager.getUsers("users")
-     /*  .then(response => this.setState({
-        users: response
-      })) */
   } 
   postUser = (newUser) => {
     return LoginManager.postUser(newUser)
@@ -74,23 +71,24 @@ export default class ApplicationViews extends Component {
     return SavedArtManager.editToVisit(savedArtId, visitedArt)
     .then(() => SavedArtManager.getAll())
     .then(allSavedArt => {
-      let haveVisited = allSavedArt.filter(art => {
-        return art.visited === false
+      let haveVisited = allSavedArt.filter(savedArt => {
+        return savedArt.visited === true
       })
       this.setState({
-        art: haveVisited
+        savedArt: haveVisited
       })
-      //page automatically refreshes when item moved to "have visited" list
-      window.location.reload()
     })
   }
 
   //delete from list - button function on /lists
   deleteItem = (id) => {
     return SavedArtManager.deleteItem(id)
-      .then(artItem => this.setState({
-        art: artItem
-      }))
+      .then(() => SavedArtManager.getAll())
+      .then(allSavedArt => {
+        this.setState({
+        savedArt: allSavedArt
+        })
+      }) 
   }
 
   render() {
@@ -131,7 +129,7 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}
-/*           art={this.state.art} */
+          art={this.state.art} 
           savedArt={this.state.savedArt}
           updateList={this.updateList}
           deleteItem={this.deleteItem} />

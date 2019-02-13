@@ -47,39 +47,15 @@
       "username": "newuser",
       "password": "123",
       "id": 8
+    },
+    {
+      "name": "Art Girl",
+      "username": "artgirl",
+      "password": "345",
+      "id": 9
     }
   ],
   "savedArt": [
-    {
-      "title": "Roy Orbison Tribute Statue",
-      "visited": true,
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "title": "St. George and the Maiden",
-      "visited": true,
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "title": "Maybelle Carter",
-      "visited": true,
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "title": "Confluence",
-      "visited": true,
-      "userId": 1,
-      "id": 12
-    },
-    {
-      "title": "Raccoons and the Magic Horseshoes",
-      "visited": true,
-      "userId": 1,
-      "id": 15
-    },
     {
       "title": "The Flutist",
       "visited": true,
@@ -87,18 +63,58 @@
       "id": 16
     },
     {
-      "userId": 1,
       "title": "Blowing Bubbles",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": 1,
       "id": 19
     },
     {
-      "userId": 1,
       "title": "Anticipation",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": 1,
       "id": 20
+    },
+    {
+      "title": "King John of England, Moses, Justinian of Rome, Justice",
+      "visited": true,
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "title": "Hillsboro Village Mural",
+      "visited": true,
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "title": "Blowing Bubbles",
+      "visited": true,
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "title": "Flights of Fantasy",
+      "visited": true,
+      "userId": 1,
+      "id": 24
+    },
+    {
+      "title": "Blowing Bubbles",
+      "visited": true,
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "title": "The Flutist",
+      "visited": true,
+      "userId": 1,
+      "id": 26
+    },
+    {
+      "title": "Anticipation",
+      "visited": true,
+      "userId": 1,
+      "id": 27
     }
   ],
   "photos": [
