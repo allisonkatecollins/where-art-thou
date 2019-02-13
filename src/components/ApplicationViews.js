@@ -37,7 +37,7 @@ export default class ApplicationViews extends Component {
       this.setState({
         users: allUsers
       })
-      console.log(this.state.users)
+      console.log("componentDidMount:", this.state.users)
     })
   }
   
@@ -48,21 +48,18 @@ export default class ApplicationViews extends Component {
   registerUser(username, password) {
     LoginManager.getUsers(username, password)
   }
-  /* getUsers = () => {
-    LoginManager.getUsers("users")
-      .then(response => this.setState({
+  getUsers = () => {
+    return LoginManager.getUsers("users")
+     /*  .then(response => this.setState({
         users: response
-      }))
-  } */
+      })) */
+  } 
   postUser = (newUser) => {
     return LoginManager.postUser(newUser)
       .then(() => LoginManager.getUsers("users"))
   }
   verifyUser = (username, password) => {
-     LoginManager.findUser(username, password)
-      .then(allUsers => this.setState({
-        users: allUsers
-      }))
+    return LoginManager.findUser(username, password)
   }
 
   //add to list - button function on /browse and on /externalArtDetails

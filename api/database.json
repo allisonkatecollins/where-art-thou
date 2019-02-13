@@ -3,7 +3,7 @@
     {
       "name": "Allison",
       "username": "ilovemusic@aol.com",
-      "password": "",
+      "password": "123",
       "id": 1
     },
     {
@@ -35,6 +35,18 @@
       "username": "newwwww",
       "password": "",
       "id": 6
+    },
+    {
+      "name": "please",
+      "username": "pleasework",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "name": "hi",
+      "username": "newuser",
+      "password": "123",
+      "id": 8
     }
   ],
   "savedArt": [

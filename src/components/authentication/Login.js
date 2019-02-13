@@ -22,25 +22,7 @@ export default class Login extends Component {
     console.log("login pushed")
     evt.preventDefault();
     this.props.verifyUser(this.state.username, this.state.password)
-    //currently alert pops up no matter what the user input is
-      /* if(this.props.users.length < 1) {
-        alert("We can't seem to find you! Try registering below")
-      } else { */
-        this.props.users.forEach(user => {
-            let loggedIn= false;
-            if (this.state.username === user.username && this.state.password === user.password) {
-                    loggedIn= true;
-                }
-            if (loggedIn === true)
-            { 
-            console.log("userId:", user.id)
-            sessionStorage.setItem("User", user.id);
-            this.props.history.push("/home");
-            }
-        })
-   /*  } */
-    
-    /* .then(user => {
+    .then(user => {
         console.log("userArray:", user)
         if (user.length === 0) {
           alert("You must be new - please register below!")
@@ -59,7 +41,7 @@ export default class Login extends Component {
             }
           })
        }
-      }) */
+      }) 
   }
   render() {
     return (

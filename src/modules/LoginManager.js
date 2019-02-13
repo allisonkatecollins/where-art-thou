@@ -18,5 +18,6 @@ export default {
   findUser(username, password) {
     return fetch(`${remoteURL}/users?username=${username}&password=${password}`)
       .then(res => res.json())
+      
   }
 }

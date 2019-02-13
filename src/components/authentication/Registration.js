@@ -56,7 +56,7 @@ export default class Registration extends Component {
               </div>
               <div>
                 <label htmlFor="Password"> Password: </label>
-                <input type="password" required onChange={this.handleFieldChange} id="Password" />
+                <input type="password" required onChange={this.handleFieldChange} id="password" />
               </div>
               <div>
                 <button type="submit" onClick={this.getAllUsers}>SUBMIT</button>
