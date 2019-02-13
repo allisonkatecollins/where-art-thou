@@ -50,9 +50,6 @@ export default class ApplicationViews extends Component {
   }
   getUsers = () => {
     return LoginManager.getUsers("users")
-     /*  .then(response => this.setState({
-        users: response
-      })) */
   } 
   postUser = (newUser) => {
     return LoginManager.postUser(newUser)
@@ -86,9 +83,12 @@ export default class ApplicationViews extends Component {
   //delete from list - button function on /lists
   deleteItem = (id) => {
     return SavedArtManager.deleteItem(id)
-      .then(artItem => this.setState({
-        art: artItem
-      }))
+      .then(() => SavedArtManager.getAll())
+      .then(allSavedArt => {
+        this.setState({
+        savedArt: allSavedArt
+        })
+      }) 
   }
 
   render() {
