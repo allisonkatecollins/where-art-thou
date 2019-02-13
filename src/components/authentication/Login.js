@@ -19,16 +19,15 @@ export default class Login extends Component {
   //alert message if user doesn't exist within database
   //if username and password do exist in database, session storage is set and user is sent to /home
   onLogin = (evt) => {
-    console.log("login pushed")
     evt.preventDefault();
     this.props.verifyUser(this.state.username, this.state.password)
     .then(user => {
-        console.log("userArray:", user)
+        //console.log("userArray:", user)
         if (user.length === 0) {
           alert("You must be new - please register below!")
         } else { 
           user.forEach(uz => {
-            console.log("user:", user)
+            //console.log("user:", user)
             let loggedIn = false;
             if (this.state.username === uz.username && this.state.password === uz.password) {
               loggedIn = true;
@@ -36,6 +35,7 @@ export default class Login extends Component {
             if (loggedIn === true) {
               sessionStorage.setItem("User", uz.id)
               let sessionUser = sessionStorage.getItem("User")
+              //let sessionUserNumber = Number(sessionUser)
               console.log("sessionUser:", sessionUser)
               this.props.history.push("/home")
             }
@@ -43,6 +43,7 @@ export default class Login extends Component {
        }
       }) 
   }
+
   render() {
     return (
       <React.Fragment>

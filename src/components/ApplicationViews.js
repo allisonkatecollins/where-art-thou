@@ -16,7 +16,8 @@ export default class ApplicationViews extends Component {
   state = {
     art: [],
     savedArt: [],
-    users: []
+    users: [],
+    userId: sessionStorage.getItem("User")
   };
 
   
@@ -105,7 +106,8 @@ export default class ApplicationViews extends Component {
         <Route exact path="/register" render={(props) => {
           return <Registration {...props} 
           getUsers={this.getUsers}
-          postUser={this.postUser} />
+          postUser={this.postUser}
+          userId={this.state.userId} />
         }} />
 
         <Route exact path="/home" render={(props) => {
@@ -121,7 +123,6 @@ export default class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/browse/:title" render={(props) => {
-          console.log("test")
           return( <ExternalArtDetails {...props}
           art={this.state.art}
           addToList={this.addToList} />)
@@ -132,7 +133,8 @@ export default class ApplicationViews extends Component {
           art={this.state.art} 
           savedArt={this.state.savedArt}
           updateList={this.updateList}
-          deleteItem={this.deleteItem} />
+          deleteItem={this.deleteItem} 
+          userId={this.state.userId}/>
         }} />
 
       </React.Fragment>
