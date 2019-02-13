@@ -74,11 +74,11 @@ export default class ApplicationViews extends Component {
     return SavedArtManager.editToVisit(savedArtId, visitedArt)
     .then(() => SavedArtManager.getAll())
     .then(allSavedArt => {
-      let haveVisited = allSavedArt.filter(art => {
-        return art.visited === false
+      let haveVisited = allSavedArt.filter(savedArt => {
+        return savedArt.visited === true
       })
       this.setState({
-        art: haveVisited
+        savedArt: haveVisited
       })
     })
   }
@@ -129,7 +129,7 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}
-/*           art={this.state.art} */
+          art={this.state.art} 
           savedArt={this.state.savedArt}
           updateList={this.updateList}
           deleteItem={this.deleteItem} />

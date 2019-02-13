@@ -6,13 +6,6 @@ export default class MySavedArt extends Component {
   state = {
     complete: false
   }
-
-  componentDidUpdate(prevProps) {
-    if(this.props.visited !== prevProps.visited) {
-      this.updateList();
-      }
-  }
-  
   
   render() {
     return(
