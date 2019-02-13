@@ -2,119 +2,45 @@
   "users": [
     {
       "name": "Allison",
-      "username": "ilovemusic@aol.com",
+      "username": "allisoncollins",
       "password": "123",
       "id": 1
     },
     {
-      "name": "Allison",
-      "username": "allisoncollins",
-      "password": "",
+      "name": "Herschel",
+      "username": "iamadog",
+      "password": "456",
       "id": 2
-    },
-    {
-      "name": "Allison Collins",
-      "username": "test",
-      "password": "",
-      "id": 3
-    },
-    {
-      "name": "al",
-      "username": "alcollins",
-      "password": "",
-      "id": 4
-    },
-    {
-      "name": "Allison",
-      "username": "b",
-      "password": "",
-      "id": 5
-    },
-    {
-      "name": "Allison",
-      "username": "newwwww",
-      "password": "",
-      "id": 6
-    },
-    {
-      "name": "please",
-      "username": "pleasework",
-      "password": "123",
-      "id": 7
-    },
-    {
-      "name": "hi",
-      "username": "newuser",
-      "password": "123",
-      "id": 8
-    },
-    {
-      "name": "Art Girl",
-      "username": "artgirl",
-      "password": "345",
-      "id": 9
     }
   ],
   "savedArt": [
     {
-      "title": "The Flutist",
-      "visited": true,
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "title": "Blowing Bubbles",
-      "visited": true,
-      "userId": 1,
-      "id": 19
-    },
-    {
-      "title": "Anticipation",
-      "visited": true,
-      "userId": 1,
-      "id": 20
-    },
-    {
-      "title": "King John of England, Moses, Justinian of Rome, Justice",
-      "visited": true,
-      "userId": 1,
-      "id": 21
-    },
-    {
-      "title": "Hillsboro Village Mural",
-      "visited": true,
-      "userId": 1,
+      "userId": "1",
+      "title": "Maybelle Carter",
+      "rating": 0,
+      "visited": false,
       "id": 22
     },
     {
-      "title": "Blowing Bubbles",
-      "visited": true,
-      "userId": 1,
+      "userId": "1",
+      "title": "Wind Reeds",
+      "rating": 0,
+      "visited": false,
       "id": 23
     },
     {
-      "title": "Flights of Fantasy",
-      "visited": true,
-      "userId": 1,
+      "userId": "2",
+      "title": "Hillsboro Village Mural",
+      "rating": 0,
+      "visited": false,
       "id": 24
     },
     {
-      "title": "Blowing Bubbles",
-      "visited": true,
-      "userId": 1,
+      "userId": "1",
+      "title": "Breaking Bread",
+      "rating": 0,
+      "visited": false,
       "id": 25
-    },
-    {
-      "title": "The Flutist",
-      "visited": true,
-      "userId": 1,
-      "id": 26
-    },
-    {
-      "title": "Anticipation",
-      "visited": true,
-      "userId": 1,
-      "id": 27
     }
   ],
   "photos": [

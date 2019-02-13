@@ -8,13 +8,14 @@ export default class MySavedArt extends Component {
   }
   
   render() {
+    console.log("sessionUser:", this.props.sessionUser)
     return(
       <React.Fragment>
         <section className="artToVisit">
         <h2>TO VISIT</h2>
           {
             this.props.savedArt.filter(savedArt =>
-              savedArt.visited === false)
+              savedArt.visited === false && savedArt.userId === sessionStorage.getItem("User"))
               .map(savedArt => 
                 <div key={savedArt.id}>
                   <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
@@ -26,7 +27,7 @@ export default class MySavedArt extends Component {
                       const visitedArt = {
                         title: savedArt.title,
                         visited: !this.state.visited,
-                        userId: 1
+                        userId: sessionStorage.getItem("User")
                       }
                       this.props.updateList(savedArt.id, visitedArt)}}>I've been here!</button>
                   <button type ="submit"
