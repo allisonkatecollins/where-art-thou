@@ -8,6 +8,9 @@
 } 
 
 .browse-image {
-  width: 300px
+  width: 250px
 }
 
+.card-body {
+  width: 300px
+}

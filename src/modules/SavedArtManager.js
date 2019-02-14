@@ -6,6 +6,11 @@ export default {
   getAll() {
     return fetch(`${remoteURL}/savedArt`).then(res => res.json())
   },
+
+  getVisited() {
+    return fetch(`${remoteURL}/savedArt?visited=true`).then(res => res.json())
+  },
+
   //add art to "To Visit" list - button function
   postToVisit(userId, title) {
     return fetch(`${remoteURL}/savedArt`, {

@@ -4,7 +4,9 @@
 }
 
 .card-image {
-  background-position: 100%;
-  background-size: cover;
-  width: 300px
+  width: 250px
 } 
+
+.card-body {
+  width: 300px
+}

@@ -6,15 +6,22 @@ import { Button, Card, CardBody } from 'reactstrap'
 import "./Lists.css"
 export default class MySavedArt extends Component {
   state = {
-    complete: false
+    visited: false
   }
   
   render() {
     console.log("sessionUser:", this.props.sessionUser)
     return(
       <React.Fragment>
-        <Link className="nav-link back" to={"/browse"}>Back to Browse</Link>
+        <Link className="backBtn" to="/browse">
+            <Button color="info">Back to Browse</Button>
+          </Link>
+          <Button className="logoutBtn" color="secondary" onClick={() => {
+            sessionStorage.clear()  
+            this.props.history.push("/")}}>Log Out</Button>
+
         <h2>TO VISIT</h2>
+
         <section className="artToVisit">
           {
             this.props.savedArt.filter(savedArt =>
@@ -22,7 +29,7 @@ export default class MySavedArt extends Component {
               .map(savedArt => 
                 <div className="listCard" key={savedArt.id}>
                   <Card>
-                    <CardBody>
+                    <CardBody className="card-body">
                       <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
                         <img className="card-image" width="100%" src="/photos/a-splash-of-color.jpg" alt="public art" />
                         

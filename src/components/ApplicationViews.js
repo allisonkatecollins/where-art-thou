@@ -72,11 +72,8 @@ export default class ApplicationViews extends Component {
     return SavedArtManager.editToVisit(savedArtId, visitedArt)
     .then(() => SavedArtManager.getAll())
     .then(allSavedArt => {
-      let haveVisited = allSavedArt.filter(savedArt => {
-        return savedArt.visited === true
-      })
       this.setState({
-        savedArt: haveVisited
+        savedArt: allSavedArt
       })
     })
   }
