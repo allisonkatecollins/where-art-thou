@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import "./Browse.css"
-import { Button, Card, CardBody, CardLink, Collapse } from 'reactstrap';
+import { Button, Card, CardBody, Collapse } from 'reactstrap';
 
-  
+  //need something to make only one detail button expand at a time
   
   export default class BrowseExternalArt extends Component {
     constructor(props) {
@@ -25,18 +25,15 @@ import { Button, Card, CardBody, CardLink, Collapse } from 'reactstrap';
         <section className="allArt">
         {
           this.props.art.map(artItem => 
-            <div class="grid">
               <div className="displayCard" key={artItem.title}>
                 <Card>
                     <CardBody>
                       <h3>{artItem.title}</h3>
                       <img width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                       
-                      <CardLink>
                         <Button outline color="warning" onClick={() => 
                           this.props.addToList((this.props.userId), (artItem.title))}>Add to List
                         </Button>
-                      </CardLink>
                     
                       <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Details</Button>
                         <Collapse isOpen={this.state.collapse}>
@@ -52,13 +49,7 @@ import { Button, Card, CardBody, CardLink, Collapse } from 'reactstrap';
 
                     </CardBody>
                   </Card>
-
-                {/* <Link className="nav-link" to={`/browse/${artItem.title}`}>{artItem.title}</Link>
-                <p>{artItem.location}</p>
-                <button type = "submit" onClick={() => 
-                  this.props.addToList((this.props.userId), (artItem.title))}>Add to List</button> */}
               </div> 
-            </div>
           )
         }
         </section>

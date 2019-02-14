@@ -15,18 +15,10 @@
   ],
   "savedArt": [
     {
-      "userId": "1",
       "title": "Maybelle Carter",
-      "rating": 0,
-      "visited": false,
-      "id": 22
-    },
-    {
+      "visited": true,
       "userId": "1",
-      "title": "Wind Reeds",
-      "rating": 0,
-      "visited": false,
-      "id": 23
+      "id": 22
     },
     {
       "userId": "2",
@@ -37,24 +29,52 @@
     },
     {
       "userId": "1",
-      "title": "Breaking Bread",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": true,
+      "id": 26
+    },
+    {
+      "userId": "1",
+      "title": "Our Past, Your Future",
       "rating": 0,
       "visited": false,
-      "id": 25
+      "id": 27
+    },
+    {
+      "userId": "1",
+      "title": "St. George and the Maiden",
+      "rating": 0,
+      "visited": false,
+      "id": 28
     },
     {
       "userId": "1",
       "title": "Roy Orbison Tribute Statue",
       "rating": 0,
       "visited": false,
-      "id": 26
+      "id": 29
     },
     {
-      "userId": null,
-      "title": "Roy Orbison Tribute Statue",
+      "userId": "1",
+      "title": "Wind Reeds",
       "rating": 0,
       "visited": false,
-      "id": 27
+      "id": 30
+    },
+    {
+      "userId": "1",
+      "title": "Confluence",
+      "rating": 0,
+      "visited": false,
+      "id": 31
+    },
+    {
+      "userId": "1",
+      "title": "Founding Fathers Cenotaph",
+      "rating": 0,
+      "visited": false,
+      "id": 32
     }
   ],
   "photos": [

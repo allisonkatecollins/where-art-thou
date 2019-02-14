@@ -126,7 +126,7 @@ export default class ApplicationViews extends Component {
           return( <ExternalArtDetails {...props}
           art={this.state.art}
           addToList={this.addToList} />)
-        }} />
+        }} /> 
 
         <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}

@@ -1,10 +1,9 @@
 .backBtn {
-  position: sticky;
-  right: 0;
+  position: sticky
 }
 
-.displayCard {
+.allArt {
   display: flex;
-  width: 30%;
-  flex: 1
-}
+  flex-wrap: wrap
+} 
+
