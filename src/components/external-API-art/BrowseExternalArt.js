@@ -9,6 +9,11 @@ export default class BrowseExternalArt extends Component {
       <React.Fragment>
         <h2>BROWSE ALL ART</h2>
         <Link className="nav-link back" to={"/lists"}>Back to My Saved Art</Link>
+        <button type = "submit" onClick={() => {
+          sessionStorage.clear()  
+          this.props.history.push("/")
+        }}>Log Out</button>
+
         <section className="allArt">
         {
           this.props.art.map(artItem => 
