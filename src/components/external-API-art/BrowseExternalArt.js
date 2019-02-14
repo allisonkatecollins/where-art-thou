@@ -29,7 +29,7 @@ import { Button, Card, CardBody, Collapse } from 'reactstrap';
                 <Card>
                     <CardBody>
                       <h3>{artItem.title}</h3>
-                      <img width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                      <img className="browse-image" width="100%" src="/photos/12th-and-porter.jpg" alt="public art" />
                       
                         <Button outline color="warning" onClick={() => 
                           this.props.addToList((this.props.userId), (artItem.title))}>Add to List

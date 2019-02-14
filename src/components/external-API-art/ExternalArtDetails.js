@@ -24,6 +24,7 @@ export default class ExternalArtDetails extends Component {
          this.state.art.map(art => 
           <div className="artCard" key={art.title}>
             <h2>{art.title}</h2>
+            <img src="/photos/aerial-innovations.jpg" alt="public art"/>
             <h4>{art.first_name} {art.last_name}</h4>
             <p>{art.location}</p>
             <p>{art.medium}</p>

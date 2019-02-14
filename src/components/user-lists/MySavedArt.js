@@ -24,7 +24,7 @@ export default class MySavedArt extends Component {
                   <Card>
                     <CardBody>
                       <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
-                        <img className="card-image" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                        <img className="card-image" width="100%" src="/photos/a-splash-of-color.jpg" alt="public art" />
                         
                         <Button color="info" size="sm" 
                             //on click of button - change value of visited to false

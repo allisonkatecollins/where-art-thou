@@ -35,10 +35,9 @@
       "id": 26
     },
     {
-      "userId": "1",
       "title": "Our Past, Your Future",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": "1",
       "id": 27
     },
     {
