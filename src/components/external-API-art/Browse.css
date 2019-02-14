@@ -1,0 +1,10 @@
+.backBtn {
+  position: sticky;
+  right: 0;
+}
+
+.displayCard {
+  display: flex;
+  width: 30%;
+  flex: 1
+}

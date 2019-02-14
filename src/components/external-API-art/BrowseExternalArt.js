@@ -1,24 +1,64 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-//import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-//import "./Art.css"
+import "./Browse.css"
+import { Button, Card, CardBody, CardLink, Collapse } from 'reactstrap';
 
-export default class BrowseExternalArt extends Component {
-  render() {
-    return(
-      <React.Fragment>
-        <h2>BROWSE ALL ART</h2>
-        <Link className="nav-link back" to={"/lists"}>Back to My Saved Art</Link>
+  
+  
+  export default class BrowseExternalArt extends Component {
+    constructor(props) {
+      super(props);
+      this.toggle = this.toggle.bind(this);
+      this.state = { collapse: false };
+    }
+  
+    toggle() {
+      this.setState({ collapse: !this.state.collapse });
+    }
+    render() {
+      return(
+        <React.Fragment>
+          <Link className="backBtn" to="/lists">
+            <Button color="info">Back to Saved Art</Button>
+          </Link>
+          <h2>BROWSE ALL ART</h2>          
         <section className="allArt">
         {
           this.props.art.map(artItem => 
-            //on click of art title, page routes to details page
-            <div className="artCard" key={artItem.title}>
-              <Link className="nav-link" to={`/browse/${artItem.title}`}>{artItem.title}</Link>
-              <p>{artItem.location}</p>
-              <button type = "submit" onClick={() => 
-                this.props.addToList((this.props.userId), (artItem.title))}>Add to List</button>
-            </div> 
+            <div class="grid">
+              <div className="displayCard" key={artItem.title}>
+                <Card>
+                    <CardBody>
+                      <h3>{artItem.title}</h3>
+                      <img width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                      
+                      <CardLink>
+                        <Button outline color="warning" onClick={() => 
+                          this.props.addToList((this.props.userId), (artItem.title))}>Add to List
+                        </Button>
+                      </CardLink>
+                    
+                      <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Details</Button>
+                        <Collapse isOpen={this.state.collapse}>
+                          <Card>
+                            <CardBody>
+                              <p>Artist: {artItem.first_name} {artItem.last_name}</p>
+                              <p>{artItem.location}</p>
+                              <p>{artItem.medium}</p>
+                              <p>{artItem.description}</p>
+                            </CardBody>
+                          </Card>
+                        </Collapse>
+
+                    </CardBody>
+                  </Card>
+
+                {/* <Link className="nav-link" to={`/browse/${artItem.title}`}>{artItem.title}</Link>
+                <p>{artItem.location}</p>
+                <button type = "submit" onClick={() => 
+                  this.props.addToList((this.props.userId), (artItem.title))}>Add to List</button> */}
+              </div> 
+            </div>
           )
         }
         </section>
