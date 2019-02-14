@@ -5,7 +5,7 @@ import { Button, Card, CardBody, Collapse } from 'reactstrap';
 
   //need something to make only one detail button expand at a time
   
-  export default class BrowseExternalArt extends Component {
+export default class BrowseExternalArt extends Component {
     constructor(props) {
       super(props);
       this.toggle = this.toggle.bind(this);
@@ -22,6 +22,11 @@ import { Button, Card, CardBody, Collapse } from 'reactstrap';
             <Button color="info">Back to Saved Art</Button>
           </Link>
           <h2>BROWSE ALL ART</h2>          
+          <Link className="nav-link back" to={"/lists"}>Back to My Saved Art</Link>
+          <button type = "submit" onClick={() => {
+            sessionStorage.clear()  
+            this.props.history.push("/")}}>Log Out</button>
+
         <section className="allArt">
         {
           this.props.art.map(artItem => 
