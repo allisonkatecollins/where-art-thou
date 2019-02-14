@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import "./Browse.css"
-import { Button, Card, CardBody, Collapse, ListGroupItem } from 'reactstrap';
+//import "./Browse.css"
+import { Button } from 'reactstrap';
+import ExternalArtCard from './ExternalArtCard';
 
-  //need something to make only one detail button expand at a time
   
 export default class BrowseExternalArt extends Component {
-    constructor(props) {
-      super(props);
-      this.toggle = this.toggle.bind(this);
-      this.state = { collapse: false };
-    }
-  
-    toggle() {
-      this.setState({ collapse: !this.state.collapse });
-    }
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
+  }
+
     render() {
       return(
         <React.Fragment>
@@ -28,25 +29,27 @@ export default class BrowseExternalArt extends Component {
 
           <h2>BROWSE ALL ART</h2>
 
-
         <section className="allArt">
         {
-          this.props.art.map(artItem => 
-              <div className="displayCard" key={artItem.title}>
+          this.props.art.map(art => 
+            <ExternalArtCard key={art.title} art={art}/>
+            
+           
+             /*  <div className="displayCard" key={artItem.title}>
                 <Card>
-                    <CardBody className="card-body">
-                      <h4>{artItem.title}</h4>
+                    <CardBody  className="card-body">
+                      <h3>{artItem.title}</h3>
                       <img className="browse-image" width="100%" src="/photos/12th-and-porter.jpg" alt="public art" />
                       
-                      <ListGroupItem>
+                      <ListGroupItem id={`${artItem.title}`}>
                         <Button outline color="warning" onClick={() => 
                           this.props.addToList((this.props.userId), (artItem.title))}>Add to List
                         </Button>
                     
-                      <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Details</Button>
+                      <Button id={`${artItem.title}`} outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Details</Button>
                         <Collapse isOpen={this.state.collapse}>
-                          <Card>
-                            <CardBody>
+                          <Card className="details-card">
+                            <CardBody className="details-expand">
                               <p>Artist: {artItem.first_name} {artItem.last_name}</p>
                               <p>{artItem.location}</p>
                               <p>{artItem.medium}</p>
@@ -54,11 +57,11 @@ export default class BrowseExternalArt extends Component {
                             </CardBody>
                           </Card>
                         </Collapse>
-                    </ListGroupItem>
+                        </ListGroupItem>
 
                     </CardBody>
                   </Card>
-              </div> 
+              </div>  */
           )
         }
         </section>

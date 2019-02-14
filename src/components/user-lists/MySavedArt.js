@@ -2,14 +2,35 @@
 //checkbox functionality
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card, CardBody } from 'reactstrap'
+import { Button, Card, CardBody, Collapse } from 'reactstrap'
 import "./Lists.css"
-export default class MySavedArt extends Component {
-  state = {
-    visited: false
+/* import ExternalArtManager from "./../../modules/ExternalArtManager"
+ */export default class MySavedArt extends Component {
+  /* state = {
+    art: []
+  }
+
+  componentDidMount() {
+    ExternalArtManager.getAll().then(artDisplay => {
+      console.log("artDisplay",artDisplay)
+      this.setState({
+        art: artDisplay
+      })
+    })
+  } */
+
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
   }
   
   render() {
+    console.log("art state",this.state.art)
     console.log("sessionUser:", this.props.sessionUser)
     return(
       <React.Fragment>
@@ -28,30 +49,73 @@ export default class MySavedArt extends Component {
               savedArt.visited === false && savedArt.userId === sessionStorage.getItem("User"))
               .map(savedArt => 
                 <div className="listCard" key={savedArt.id}>
-                  <Card>
-                    <CardBody className="card-body">
-                      <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
-                        <img className="card-image" width="100%" src="/photos/a-splash-of-color.jpg" alt="public art" />
-                        
+                <Card>
+                   {/*  <CardBody  className="card-body">
+                      <img className="browse-image" width="100%" src="/photos/a-splash-of-color.jpg" alt="public art" />
+                       */}
+                     {/*  {this.state.art !== undefined ? this.state.art.find(art =>
+                      <>
+                        <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>{savedArt.title}</Button>
+                          <Collapse isOpen={this.state.collapse}>
+                            <Card className="details-card">
+                              <CardBody className="details-expand">
+                               <p>Artist: {art.first_name} {art.last_name}</p>
+                                <p>{art.location}</p>
+                                <p>{art.medium}</p>
+                                <p>{art.description}</p> 
+                              </CardBody>
+                            </Card>
+                          </Collapse>
+                      </>
+                      ) : ""} */}
+
+
+  <CardBody className="card-body">
+    <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
+      <img className="card-image" width="100%" src="/photos/a-splash-of-color.jpg" alt="public art" />
+      
+      <Button color="info" size="sm" 
+          //on click of button - change value of visited to false
+          //art item should move to "Have Visited" list
+            onClick={() => {
+              const visitedArt = {
+                title: savedArt.title,
+                visited: !this.state.visited,
+                userId: sessionStorage.getItem("User")
+              }
+              this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
+      </Button>
+
+      <Button color="warning" size="sm"
+          //on click of button - remove item from "To Visit" list
+            onClick={() => this.props.deleteItem(savedArt.id)}>
+              Remove from List
+      </Button>
+  </CardBody>
+</Card> 
+                   
                         <Button color="info" size="sm" 
-                            //on click of button - change value of visited to false
-                            //art item should move to "Have Visited" list
-                              onClick={() => {
-                                const visitedArt = {
-                                  title: savedArt.title,
-                                  visited: !this.state.visited,
-                                  userId: sessionStorage.getItem("User")
-                                }
-                                this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
+                              //on click of button - change value of visited to false
+                              //art item should move to "Have Visited" list
+                                onClick={() => {
+                                  const visitedArt = {
+                                    title: savedArt.title,
+                                    visited: !this.state.visited,
+                                    userId: sessionStorage.getItem("User")
+                                  }
+                                  this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
                         </Button>
 
+                        
                         <Button color="warning" size="sm"
                             //on click of button - remove item from "To Visit" list
                               onClick={() => this.props.deleteItem(savedArt.id)}>
                                 Remove from List
                         </Button>
-                    </CardBody>
-                  </Card>
+                     
+
+
+               
                 </div>
               )
           }
