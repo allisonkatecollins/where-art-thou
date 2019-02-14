@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import ExternalArtManager from "./../../modules/ExternalArtManager"
-//addToList function
+
 export default class ExternalArtDetails extends Component {
   state = {
     art: []
@@ -28,8 +28,8 @@ export default class ExternalArtDetails extends Component {
             <p>{art.location}</p>
             <p>{art.medium}</p>
             <p>{art.description}</p>
-            <button type = "submit" onClick={() => 
-                this.props.addToList((this.props.userId), (art.title))}>Add to List</button>
+            {/* <button type = "submit" onClick={() => 
+                this.props.addToList((this.props.userId), (art.title))}>Add to List</button> */}
          </div>)
        }
    <Link className="nav-link back" to={"/browse"}>Back to Browse</Link>

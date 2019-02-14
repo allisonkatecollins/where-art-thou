@@ -1,0 +1,9 @@
+.backBtn {
+  position: sticky
+}
+
+.allArt {
+  display: flex;
+  flex-wrap: wrap
+} 
+

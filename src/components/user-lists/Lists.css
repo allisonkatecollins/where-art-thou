@@ -1,0 +1,10 @@
+.artToVisit {
+  display: flex;
+  flex-wrap: wrap
+}
+
+/* .card-image {
+  background-position: 100%;
+  background-size: cover;
+  width: 300px
+} */
