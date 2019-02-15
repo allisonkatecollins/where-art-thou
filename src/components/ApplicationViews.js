@@ -6,9 +6,9 @@ import Registration from "./authentication/Registration";
 import LandingPage from "./LandingPage"
 import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
-import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
+import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 //import PhotoManager from "../modules/PhotoManager";
 
 export default class ApplicationViews extends Component {

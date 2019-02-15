@@ -15,42 +15,11 @@
   ],
   "savedArt": [
     {
-      "title": "Maybelle Carter",
-      "visited": true,
-      "userId": "1",
-      "id": 22
-    },
-    {
       "userId": "2",
       "title": "Hillsboro Village Mural",
       "rating": 0,
       "visited": false,
       "id": 24
-    },
-    {
-      "userId": "1",
-      "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": true,
-      "id": 26
-    },
-    {
-      "title": "Our Past, Your Future",
-      "visited": true,
-      "userId": "1",
-      "id": 27
-    },
-    {
-      "title": "St. George and the Maiden",
-      "visited": true,
-      "userId": "1",
-      "id": 28
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 31
     },
     {
       "title": "Founding Fathers Cenotaph",
@@ -59,22 +28,10 @@
       "id": 32
     },
     {
-      "title": "Roy Orbison Tribute Statue",
-      "visited": true,
-      "userId": "1",
-      "id": 33
-    },
-    {
-      "id": 34
-    },
-    {
-      "id": 35
-    },
-    {
       "userId": "1",
       "title": "Confluence",
       "rating": 0,
-      "visited": true,
+      "visited": false,
       "id": 36
     },
     {
@@ -88,37 +45,6 @@
       "visited": true,
       "userId": "1",
       "id": 38
-    },
-    {
-      "userId": "1",
-      "title": "St. George and the Maiden",
-      "rating": 0,
-      "visited": false,
-      "id": 39
-    },
-    {
-      "title": "Wind Reeds",
-      "visited": true,
-      "userId": "1",
-      "id": 40
-    },
-    {
-      "title": "Confederate Private Monument",
-      "visited": true,
-      "userId": "1",
-      "id": 41
-    }
-  ],
-  "photos": [
-    {
-      "id": 1,
-      "pngLink": "",
-      "externalAPIId": 1
-    },
-    {
-      "id": 2,
-      "pngLink": "",
-      "externalAPIId": 2
     }
   ]
 }

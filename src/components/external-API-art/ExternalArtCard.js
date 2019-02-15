@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import "./Browse.css"
 import { Button, Card, CardBody, Collapse, ListGroupItem } from 'reactstrap';
-
-  //need something to make only one detail button expand at a time
   
 export default class ExternalArtCard extends Component {
     constructor(props) {
@@ -25,10 +23,6 @@ export default class ExternalArtCard extends Component {
                       <img className="browse-image" width="100%" src="/photos/12th-and-porter.jpg" alt="public art" />
                       
                       <ListGroupItem>
-                        <Button outline color="warning" onClick={() => 
-                          this.props.addToList((this.props.userId), (art.title))}>Add to List
-                        </Button>
-                    
                       <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Details</Button>
                         <Collapse isOpen={this.state.collapse}>
                           <Card>
