@@ -6,9 +6,9 @@ import Registration from "./authentication/Registration";
 import LandingPage from "./LandingPage"
 import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
-import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
+import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 //import PhotoManager from "../modules/PhotoManager";
 
 export default class ApplicationViews extends Component {
@@ -72,11 +72,8 @@ export default class ApplicationViews extends Component {
     return SavedArtManager.editToVisit(savedArtId, visitedArt)
     .then(() => SavedArtManager.getAll())
     .then(allSavedArt => {
-      let haveVisited = allSavedArt.filter(savedArt => {
-        return savedArt.visited === true
-      })
       this.setState({
-        savedArt: haveVisited
+        savedArt: allSavedArt
       })
     })
   }

@@ -7,3 +7,19 @@
   flex-wrap: wrap
 } 
 
+.browse-image {
+  width: 250px
+}
+
+.card-body {
+  width: 300px
+}
+
+.details-expand {
+  height: 100%; 
+  overflow: auto; 
+}
+
+.details-card {
+  overflow: auto
+}

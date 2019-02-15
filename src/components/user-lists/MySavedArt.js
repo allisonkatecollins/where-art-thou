@@ -13,7 +13,15 @@ export default class MySavedArt extends Component {
     console.log("sessionUser:", this.props.sessionUser)
     return(
       <React.Fragment>
-        <Link className="nav-link back" to={"/browse"}>Back to Browse</Link>
+
+        <Link className="backBtn" to="/browse">
+            <Button color="info">Back to Browse</Button>
+        </Link>
+          
+        <Button className="logoutBtn" color="secondary" onClick={() => {
+            sessionStorage.clear()  
+            this.props.history.push("/")}}>Log Out</Button>
+
         <h2>TO VISIT</h2>
         <section className="artToVisit">
           {
@@ -24,7 +32,7 @@ export default class MySavedArt extends Component {
                   <Card>
                     <CardBody>
                       <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
-                        <img className="card-image" width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                        <img className="card-image" width="100%" src="/photos/cool-fences.jpg" alt="public art" />
                         
                         <Button color="info" size="sm" 
                             //on click of button - change value of visited to false
@@ -37,7 +45,6 @@ export default class MySavedArt extends Component {
                                 }
                                 this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
                         </Button>
-
                         <Button color="warning" size="sm"
                             //on click of button - remove item from "To Visit" list
                               onClick={() => this.props.deleteItem(savedArt.id)}>
