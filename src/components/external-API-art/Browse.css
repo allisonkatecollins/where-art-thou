@@ -3,9 +3,13 @@
 }
 
 .allArt {
+  display: flex
+}  
+
+.external-art-card {
   display: flex;
-  flex-wrap: wrap
-} 
+  margin-right: 60%
+}
 
 .browse-image {
   width: 250px
@@ -15,11 +19,14 @@
   width: 300px
 }
 
-.details-expand {
-  height: 100%; 
-  overflow: auto; 
+.details-expand { 
+  overflow: auto
 }
 
 .details-card {
   overflow: auto
+}
+
+.addBtn {
+  width: 300px
 }

@@ -28,23 +28,46 @@
       "id": 32
     },
     {
-      "userId": "1",
       "title": "Confluence",
-      "rating": 0,
-      "visited": false,
-      "id": 36
-    },
-    {
-      "title": "Maybelle Carter",
       "visited": true,
       "userId": "1",
-      "id": 37
+      "id": 36
     },
     {
       "title": "Roy Orbison Tribute Statue",
       "visited": true,
       "userId": "1",
       "id": 38
+    },
+    {
+      "title": "Aerial Innovations Mural",
+      "visited": true,
+      "userId": "1",
+      "id": 45
+    },
+    {
+      "userId": "1",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 46
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "jpgLink": "/photos/angel.jpg",
+      "title": "Angel"
+    },
+    {
+      "id": 2,
+      "jpgLink": "/photos/ariel.jpg",
+      "title": "Ariel"
+    },
+    {
+      "id": 3,
+      "jpgLink": "/photos/april baby.jpg",
+      "title": "April Baby"
     }
   ]
 }
