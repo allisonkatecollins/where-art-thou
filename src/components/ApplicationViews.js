@@ -9,7 +9,7 @@ import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
 import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
-//import PhotoManager from "../modules/PhotoManager";
+import PhotoManager from "../modules/PhotoManager"
 
 export default class ApplicationViews extends Component {
   //set initial state
@@ -17,14 +17,17 @@ export default class ApplicationViews extends Component {
     art: [],
     savedArt: [],
     users: [],
-    userId: sessionStorage.getItem("User")
+    userId: sessionStorage.getItem("User"),
+    photos: "",
+    title: []
   };
 
   
   componentDidMount() {
     ExternalArtManager.getAll().then(allArt => {
       this.setState({
-        art: allArt
+        art: allArt,
+        title: allArt.title
       })
     })
     
@@ -39,6 +42,19 @@ export default class ApplicationViews extends Component {
         users: allUsers
       })
       console.log("componentDidMount:", this.state.users)
+    })
+/* 
+    PhotoManager.getOnePhoto(this.state.title).then(artPhoto=> {
+      this.setState({
+        photo: artPhoto
+      })
+    })
+ */
+    PhotoManager.getAllPhotos().then(artPhoto=> {
+     // console.log("artPhoto:",artPhoto)
+      this.setState({
+        photos: artPhoto
+      })
     })
   }
   
@@ -114,6 +130,7 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/browse" render={(props) => {
           return <BrowseExternalArt {...props} 
+          photos={this.state.photos}
           art={this.state.art}
           addToList={this.addToList}
           userId={this.state.userId}  />

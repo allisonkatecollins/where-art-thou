@@ -3,9 +3,14 @@
 }
 
 .allArt {
+  display: flex table-row;
+  margin-right: 70%
+}  
+
+.external-art-card {
   display: flex;
-  flex-wrap: wrap
-} 
+  margin-right: 100%
+}
 
 .browse-image {
   width: 250px
@@ -15,11 +20,15 @@
   width: 300px
 }
 
-.details-expand {
-  height: 100%; 
-  overflow: auto; 
+.details-expand { 
+  overflow: auto
 }
 
 .details-card {
   overflow: auto
+}
+
+.addBtn {
+  width: 300px;
+  justify-content: center
 }
