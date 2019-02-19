@@ -38,7 +38,7 @@ export default class BrowseExternalArt extends Component {
         
         {
           this.props.art.map(art => 
-            <Card class="allArt" key={art.title}>
+            <Card className="allArt" key={art.title}>
             <ExternalArtCard photos={this.props.photos} art={art}/>
             
               <Button className="addBtn" outline color="warning" onClick={() => 
