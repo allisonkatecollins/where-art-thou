@@ -19,17 +19,17 @@ export default class ExternalArtCard extends Component {
       //console.log("titles:",art.title, photos[0].title)
       //console.log("photos:", photos)
       return(
+        <React.Fragment>
         <Card className="external-art-card">
           <CardBody className="card-body">
             <h4>{art.title}</h4>
 
             {photos.map(currentPhoto => 
            
-            
-            (art.title === currentPhoto.title) ?
-              <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />
-              :
-              console.log("nothing")
+            {
+              if (art.title === currentPhoto.title) {
+              return <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />
+            }}
             )}
            
                       <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '.5rem' }}>Details</Button>
@@ -42,8 +42,9 @@ export default class ExternalArtCard extends Component {
                               <p>{art.description}</p>
                             </CardBody>
                         </Collapse>
-            </CardBody>
-          </Card>
+          </CardBody>
+        </Card>
+        </React.Fragment>
       )
     }
 }

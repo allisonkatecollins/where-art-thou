@@ -3,12 +3,13 @@
 }
 
 .allArt {
-  display: flex
+  display: flex;
+  margin-right: 70%
 }  
 
 .external-art-card {
   display: flex;
-  margin-right: 60%
+  margin-right: 100%
 }
 
 .browse-image {
@@ -28,5 +29,6 @@
 }
 
 .addBtn {
-  width: 300px
+  width: 300px;
+  justify-content: center
 }
