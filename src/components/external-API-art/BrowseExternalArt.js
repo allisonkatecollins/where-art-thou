@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import "./Browse.css"
-import { Button, Card } from 'reactstrap';
+import { Button, Card, Row, Col } from 'reactstrap';
 import ExternalArtCard from './ExternalArtCard';
 
   
@@ -10,8 +10,8 @@ export default class BrowseExternalArt extends Component {
       return(
         <React.Fragment>
 
-          <Link className="linkBtn" to="/lists">
-            <Button className="backBtn" color="info">Back to Saved Art</Button>
+          <Link to="/lists">
+            <Button className="sticky-top" color="info">Back to Saved Art</Button>
           </Link>
           
           <Button className="logoutBtn" color="secondary" onClick={() => {
@@ -20,12 +20,13 @@ export default class BrowseExternalArt extends Component {
 
           <h2>BROWSE ALL ART</h2>
 
-        <section>
+        <Row>
         
         {
           //loop through all object in external API and render ExternalArtCard component for each one
           //"art" is the external API, "photos" is an array in database.json
           this.props.art.map(art => 
+            <Col>
             <Card className="allArt" key={art.title}>
             <ExternalArtCard photos={this.props.photos} art={art}/>
             
@@ -35,9 +36,10 @@ export default class BrowseExternalArt extends Component {
               </Button>
 
            </Card>
+           </Col>
           )
         }
-        </section>
+        </Row>
       </React.Fragment>
     )
   }

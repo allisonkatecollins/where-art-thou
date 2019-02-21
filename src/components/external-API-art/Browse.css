@@ -1,10 +1,4 @@
-.backBtn {
-  position: sticky
-}
 
-.linkBtn {
-  position: sticky
-}
 
 .allArt {
   display: flex table-row;
@@ -16,13 +10,13 @@
   margin-right: 100%
 }
 
-.browse-image {
+/* .browse-image {
   width: 250px
-}
+} */
 
-.card-body {
+/* .card-body {
   width: 300px
-}
+} */
 
 .details-expand { 
   overflow: auto
