@@ -3,21 +3,26 @@ import "./Browse.css"
 import { Button, Card, CardBody, Collapse} from 'reactstrap'
 export default class ExternalArtCard extends Component {
     constructor(props) {
+      //super() must be called when you have a constructor
+      //prevent this.props from being undefined
       super(props);
+      //bind event handler method to instance of "details" button being pushed
       this.toggle = this.toggle.bind(this);
+      //set initial state
       this.state = { collapse: false };
     }
 
+    //when Details button is pressed, call toggle() function
+    //toggle changes state (which is a boolean) of collapse
     toggle() {
       this.setState({ collapse: !this.state.collapse });
     }
 
     render() {
+      //"art" is from external API
       let art = this.props.art
+      //"photos" is from database.json
       let photos = this.props.photos
-      //console.log("photo props:",photos[0].jpgLink)
-      //console.log("titles:",art.title, photos[0].title)
-      //console.log("photos:", photos)
       return(
         <React.Fragment>
         <Card className="external-art-card">
@@ -25,7 +30,7 @@ export default class ExternalArtCard extends Component {
             <h4>{art.title}</h4>
 
             {photos.map(currentPhoto => 
-           
+           //title from API must exactly match title in database.json in order for jpgLink to be accessed
             {
               if (art.title === currentPhoto.title) {
               return <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />

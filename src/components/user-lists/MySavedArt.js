@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import { Button, Card, CardBody } from 'reactstrap'
 import "./Lists.css"
 export default class MySavedArt extends Component {
-  state = {
+ /*  state = {
     complete: false
   }
-  
+   */
   render() {
     return(
       <React.Fragment>
@@ -25,7 +25,10 @@ export default class MySavedArt extends Component {
         <section className="artToVisit">
           {
             this.props.savedArt.filter(savedArt =>
+              //filter savedArt: has not been visited, userId in database.json matches current session user
               savedArt.visited === false && savedArt.userId === sessionStorage.getItem("User"))
+              //loop through savedArt array, generate card for each item
+              //need to insert SavedArtCard here
               .map(savedArt => 
                 <div className="listCard" key={savedArt.id}>
                   <Card>

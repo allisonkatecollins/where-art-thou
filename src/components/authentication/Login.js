@@ -51,11 +51,11 @@ export default class Login extends Component {
               this.props.history.push("/home")
             }
           })
-       }
+        }
       }) 
-  }
-
-  render() {
+    }
+    
+    render() {
     //login form with input fields and link to registration page
     return (
       <React.Fragment>
