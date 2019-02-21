@@ -44,6 +44,7 @@ export default class MySavedArt extends Component {
                                   visited: !this.state.visited,
                                   userId: sessionStorage.getItem("User")
                                 }
+                                //updateList defined in ApplicationViews, calls PUT fetch
                                 this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
                         </Button>
                         <Button color="warning" size="sm"
@@ -61,9 +62,10 @@ export default class MySavedArt extends Component {
         <h2>HAVE VISITED</h2>
         {
           this.props.savedArt.filter(savedArt => 
-            //console.log(savedArt)
+            //filter savedArt: boolean=true, userId in database.json matches current session user
             savedArt.visited === true && savedArt.userId === sessionStorage.getItem("User"))
               .map(savedArt =>
+                //want to add SavedArtCard here
                 <Card className="have-visited" key={savedArt.id}>{savedArt.title}</Card>
                 )
               

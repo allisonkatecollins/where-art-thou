@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import "./Lists.css"
 import { Button, Card, CardBody, Collapse } from 'reactstrap';
-
-  //need something to make only one detail button expand at a time
   
+//same basic structure as ExternalArtCard
 export default class ExternalArtCard extends Component {
     constructor(props) {
       super(props);
