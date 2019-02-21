@@ -6,25 +6,11 @@ import ExternalArtCard from './ExternalArtCard';
 
   
 export default class BrowseExternalArt extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false, currentPhoto: {} };
-  }
-
-  toggle() {
-    this.setState({ collapse: !this.state.collapse });
-  }
-
-  updateState() {
-
-  }
-
     render() {
       return(
         <React.Fragment>
 
-          <Link to="/lists">
+          <Link className="linkBtn" to="/lists">
             <Button className="backBtn" color="info">Back to Saved Art</Button>
           </Link>
           

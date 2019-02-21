@@ -10,7 +10,6 @@ export default class MySavedArt extends Component {
   }
   
   render() {
-    console.log("sessionUser:", this.props.sessionUser)
     return(
       <React.Fragment>
 
@@ -30,8 +29,7 @@ export default class MySavedArt extends Component {
               .map(savedArt => 
                 <div className="listCard" key={savedArt.id}>
                   <Card>
-                    <CardBody>
-                      <Link className="nav-link" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link> 
+                    <CardBody className="to-visit">{savedArt.title}
                         <img className="card-image" width="100%" src="/photos/cool-fences.jpg" alt="public art" />
                         
                         <Button color="info" size="sm" 
@@ -59,16 +57,21 @@ export default class MySavedArt extends Component {
         <section className="artHaveVisited">
         <h2>HAVE VISITED</h2>
         {
-            this.props.savedArt.map(savedArt => {
-              console.log(savedArt)
+          this.props.savedArt.filter(savedArt => 
+            //console.log(savedArt)
+            savedArt.visited === true && savedArt.userId === sessionStorage.getItem("User"))
+              .map(savedArt =>
+                <Card className="have-visited" key={savedArt.id}>{savedArt.title}</Card>
+                )
+              
+            /* this.props.savedArt.map(savedArt => {
+              //console.log(savedArt)
               if(savedArt.visited === true) {
                 return <div className="listCard" key={savedArt.id}>
                   <Card>           
                     <Link className="to-details-page" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
                   </Card>
-                </div>
-              }}
-            )
+                </div> */
         } 
         </section>
       </React.Fragment>

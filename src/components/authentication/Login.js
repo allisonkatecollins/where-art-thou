@@ -2,41 +2,52 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 
 export default class Login extends Component {
+  //setting initial state to undefined for input fields
   state = {
     username: "",
     password: ""
   }
 
-  //record changes to input fields and set state
+  //record changes to input fields
+  //called when each input value is rendered
+  //set state
   handleFieldChange = evt => {
+    //state starts as undefined
     const stateToChange = {};
+    //define input's id as the user-entered value
     stateToChange[evt.target.id] = evt.target.value
+    //value of const will be the new state of each input field
     this.setState(stateToChange)
+    //console log should show username and password that have just been entered
     console.log("state:", this.state)
   }
 
-  //get user by username and password
-  //alert message if user doesn't exist within database
-  //if username and password do exist in database, session storage is set and user is sent to /home
+  //function to be called in render
   onLogin = (evt) => {
+    //prevent URL redirect (?)
     evt.preventDefault();
+    //call verifyUser, which is defined in ApplicationViews
+    //looks up matching username and password in database.json
     this.props.verifyUser(this.state.username, this.state.password)
     .then(user => {
-        //console.log("userArray:", user)
-        if (user.length === 0) {
-          alert("You must be new - please register below!")
-        } else { 
-          user.forEach(uz => {
-            //console.log("user:", user)
-            let loggedIn = false;
-            if (this.state.username === uz.username && this.state.password === uz.password) {
+      //alert message if user doesn't exist within database
+      if (user.length === 0) {
+        alert("You must be new - please register below!")
+      } else { 
+        //state of loggedIn (i.e. session storage) is set to false if username/password not found
+        user.forEach(uz => {
+          let loggedIn = false;
+          //if both username and password do exist in database, session storage is set to true
+          if (this.state.username === uz.username && this.state.password === uz.password) {
               loggedIn = true;
             }
             if (loggedIn === true) {
+              //"User" and current id will be passed when sessionStorage() is called throughout the files
               sessionStorage.setItem("User", uz.id)
               let sessionUser = sessionStorage.getItem("User")
-              //let sessionUserNumber = Number(sessionUser)
+              //sessionUser will be the numerical id as stored in database.json in the users array
               console.log("sessionUser:", sessionUser)
+              //user redirected to /home when login button is pushed
               this.props.history.push("/home")
             }
           })
@@ -45,6 +56,7 @@ export default class Login extends Component {
   }
 
   render() {
+    //login form with input fields and link to registration page
     return (
       <React.Fragment>
         <h2>LOGIN</h2>

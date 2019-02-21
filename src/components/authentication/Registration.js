@@ -1,22 +1,27 @@
 import React, { Component } from "react"
 
 export default class Registration extends Component {
+  //set initial state as undefined
   state ={
     name: "",
     username: "",
     password: ""
   }
 
+  //same as in Login.js
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
   }
 
+  //defining new function here that won't be used outside this component
   getAllUsers = evt => {
     evt.preventDefault();
+    //getUsers is defined in LoginManager; is a fetch to return everything in users array in database.json
     this.props.getUsers().then(allUsers => {
       let usersArray = allUsers.filter(user => {
+        //console logs each already existing username next to new username
         console.log("registration:", user.username, this.state.username)
         return (user.username === this.state.username)
       })

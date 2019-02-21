@@ -72,6 +72,7 @@ export default class ApplicationViews extends Component {
     return LoginManager.postUser(newUser)
       .then(() => LoginManager.getUsers("users"))
   }
+  //findUser fetches data from database.json and connects matching username and password
   verifyUser = (username, password) => {
     return LoginManager.findUser(username, password)
   }
