@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/users`).then(res => res.json())
   },
 
-  postUser(newUser) {
+  registerUser(newUser) {
     return fetch(`${remoteURL}/users`, {
       method: "POST",
       headers: {

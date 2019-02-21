@@ -21,7 +21,7 @@ export default {
       body: JSON.stringify({userId:userId, title:title, rating:0, visited:false})
     }).then(data => data.json()).then(() => (alert("Art added to list!")))
   },
-  //add art to "Have Visited" list - checkbox function
+  //add art to "Have Visited" list - button function
   editToVisit(savedArtId, visitedArt) {
     return fetch(`${remoteURL}/savedArt/${savedArtId}`, {
       method: "PUT",

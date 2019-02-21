@@ -2,6 +2,10 @@
   position: sticky
 }
 
+.linkBtn {
+  position: sticky
+}
+
 .allArt {
   display: flex table-row;
   margin-right: 70%

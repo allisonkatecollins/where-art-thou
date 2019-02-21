@@ -11,6 +11,36 @@
       "username": "iamadog",
       "password": "456",
       "id": 2
+    },
+    {
+      "name": "Allison Collins",
+      "username": "new2",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "Allison Collins",
+      "username": "new",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "Allison Collins",
+      "username": "hi",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "Allison Collins",
+      "username": "whew",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "name": "Allison Collins",
+      "username": "charmander",
+      "password": "123",
+      "id": 7
     }
   ],
   "savedArt": [
@@ -24,7 +54,7 @@
     {
       "title": "Founding Fathers Cenotaph",
       "visited": true,
-      "userId": "1",
+      "userId": "2",
       "id": 32
     },
     {
@@ -41,8 +71,8 @@
     },
     {
       "title": "Aerial Innovations Mural",
-      "visited": true,
-      "userId": "1",
+      "visited": false,
+      "userId": "3",
       "id": 45
     },
     {
@@ -58,13 +88,6 @@
       "rating": 0,
       "visited": false,
       "id": 47
-    },
-    {
-      "userId": null,
-      "title": "Founding Fathers Cenotaph",
-      "rating": 0,
-      "visited": false,
-      "id": 48
     }
   ],
   "photos": [

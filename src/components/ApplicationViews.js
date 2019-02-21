@@ -8,7 +8,7 @@ import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
-import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
+//import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import PhotoManager from "../modules/PhotoManager"
 
 export default class ApplicationViews extends Component {
@@ -37,19 +37,14 @@ export default class ApplicationViews extends Component {
       })
     })
     
+    //users array will re-render as value assigned to allUsers in Registration.js
     LoginManager.getUsers().then(allUsers => {
       this.setState({
         users: allUsers
       })
       console.log("componentDidMount:", this.state.users)
     })
-/* 
-    PhotoManager.getOnePhoto(this.state.title).then(artPhoto=> {
-      this.setState({
-        photo: artPhoto
-      })
-    })
- */
+
     PhotoManager.getAllPhotos().then(artPhoto=> {
      // console.log("artPhoto:",artPhoto)
       this.setState({
@@ -58,25 +53,36 @@ export default class ApplicationViews extends Component {
     })
   }
   
-  //authentication
+  //AUTHENTICATION
   isAuthenticated = () => sessionStorage.getItem("User") !==null
 
-  //login and registration
-  registerUser(username, password) {
+  //LOGIN AND REGISTRATION
+
+  //I don't think commented out code was doing anything
+ /*  registerUser(username, password) {
     LoginManager.getUsers(username, password)
-  }
+  } */
+
+  //do I need to pass "users"? doesn't seem to make a difference if I remove the string
   getUsers = () => {
     return LoginManager.getUsers("users")
   } 
+
+  
+  //if it weren't defined here then this.props.postUser in Registration.js would throw an error
   postUser = (newUser) => {
-    return LoginManager.postUser(newUser)
+    //postUser in LoginManager does a POST fetch using newUser
+    return LoginManager.registerUser(newUser)
       .then(() => LoginManager.getUsers("users"))
   }
+
+  //findUser fetches data from database.json and connects matching username and password
   verifyUser = (username, password) => {
     return LoginManager.findUser(username, password)
   }
 
-  //add to list - button function on /browse and on /externalArtDetails
+  //add to list - button function on /browse
+  //postToVisit does a POST fetch in the savedArt array in database.json
   addToList = (userId, title) => SavedArtManager.postToVisit(userId, title)
     .then(() => SavedArtManager.getAll())
     .then(artItems => this.setState({
@@ -84,6 +90,7 @@ export default class ApplicationViews extends Component {
     )
 
   //update list - button function on /lists
+  //editToVisit does a PUT fetch
   updateList = (savedArtId, visitedArt) => {
     return SavedArtManager.editToVisit(savedArtId, visitedArt)
     .then(() => SavedArtManager.getAll())
@@ -136,11 +143,11 @@ export default class ApplicationViews extends Component {
           userId={this.state.userId}  />
         }} />
 
-        <Route exact path="/browse/:title" render={(props) => {
+       {/*  <Route exact path="/browse/:title" render={(props) => {
           return( <ExternalArtDetails {...props}
           art={this.state.art}
           addToList={this.addToList} />)
-        }} /> 
+        }} />  */}
 
         <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}
