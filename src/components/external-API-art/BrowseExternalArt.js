@@ -31,7 +31,7 @@ export default class BrowseExternalArt extends Component {
             <ExternalArtCard photos={this.props.photos} art={art}/>
             
             {/* addToList is defined in ApplicationViews and calls a user-dependent POST fetch */}
-              <Button className="addBtn" outline color="warning" onClick={() => 
+              <Button className="addBtn" outline color="dark" onClick={() => 
                 this.props.addToList((this.props.userId), (art.title))}>Add to List   
               </Button>
 

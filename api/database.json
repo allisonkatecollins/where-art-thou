@@ -11,42 +11,6 @@
       "username": "iamadog",
       "password": "456",
       "id": 2
-    },
-    {
-      "name": "Allison Collins",
-      "username": "new2",
-      "password": "123",
-      "id": 3
-    },
-    {
-      "name": "Allison Collins",
-      "username": "new",
-      "password": "",
-      "id": 4
-    },
-    {
-      "name": "Allison Collins",
-      "username": "hi",
-      "password": "123",
-      "id": 5
-    },
-    {
-      "name": "Allison Collins",
-      "username": "whew",
-      "password": "123",
-      "id": 6
-    },
-    {
-      "name": "Allison Collins",
-      "username": "charmander",
-      "password": "123",
-      "id": 7
-    },
-    {
-      "name": "allison",
-      "username": "newnew",
-      "password": "123",
-      "id": 8
     }
   ],
   "savedArt": [
@@ -76,12 +40,6 @@
       "id": 38
     },
     {
-      "title": "Aerial Innovations Mural",
-      "visited": false,
-      "userId": "3",
-      "id": 45
-    },
-    {
       "title": "Beautiful Decay",
       "visited": true,
       "userId": "1",
@@ -98,6 +56,34 @@
       "visited": true,
       "userId": "1",
       "id": 49
+    },
+    {
+      "userId": "1",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 50
+    },
+    {
+      "userId": "1",
+      "title": "St. George and the Maiden",
+      "rating": 0,
+      "visited": false,
+      "id": 51
+    },
+    {
+      "userId": "1",
+      "title": "Gold Star Monument to World War I Veterans",
+      "rating": 0,
+      "visited": false,
+      "id": 52
+    },
+    {
+      "userId": "1",
+      "title": "Tommy Owen",
+      "rating": 0,
+      "visited": false,
+      "id": 53
     }
   ],
   "photos": [

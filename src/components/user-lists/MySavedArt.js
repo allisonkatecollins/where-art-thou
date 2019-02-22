@@ -1,9 +1,10 @@
 //connects have visited and to visit
-//checkbox functionality
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card, CardBody } from 'reactstrap'
+import { Button, Card } from 'reactstrap'
 import "./Lists.css"
+import ToVisitCard from './ToVisitCard'
+//import HaveVisitedCard from './HaveVisitedCard'
 export default class MySavedArt extends Component {
   //do not delete this
   state = {
@@ -31,30 +32,30 @@ export default class MySavedArt extends Component {
               //loop through savedArt array, generate card for each item
               //need to insert SavedArtCard here
               .map(savedArt => 
-                <div className="listCard" key={savedArt.id}>
-                  <Card>
-                    <CardBody className="to-visit">{savedArt.title}
-                        <img className="card-image" width="100%" src="/photos/cool-fences.jpg" alt="public art" />
+                <div className="card" key={savedArt.id}>
+                    <Card className="to-visit">
+                      {/* <CardBody> */}
+                      <ToVisitCard photos={this.props.photos} savedArt={savedArt} art={this.props.art}/>
                         
-                        <Button className="mr-2" color="info" size="sm" 
-                            //on click of button - change value of visited to false
-                            //art item should move to "Have Visited" list
-                              onClick={() => {
-                                const visitedArt = {
-                                  title: savedArt.title,
-                                  visited: !this.state.visited,
-                                  userId: sessionStorage.getItem("User")
-                                }
-                                //updateList defined in ApplicationViews, calls PUT fetch
-                                this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
-                        </Button>
-                        <Button color="warning" size="sm"
-                            //on click of button - remove item from "To Visit" list
-                              onClick={() => this.props.deleteItem(savedArt.id)}>
-                                Remove from List
-                        </Button>
-                    </CardBody>
-                  </Card>
+                      <Button className="mr-1" color="info" size="sm" 
+                      //on click of button - change value of visited to false
+                      //art item should move to "Have Visited" list
+                      onClick={() => {
+                        const visitedArt = {
+                        title: this.props.savedArt.title,
+                        visited: !this.state.visited,
+                        userId: sessionStorage.getItem("User")
+                        }
+                        this.props.updateList(this.props.savedArt.id, visitedArt)}}>I've been here!
+                    </Button>
+
+                    <Button color="warning" size="sm"
+                      //on click of button - remove item from "To Visit" list
+                      onClick={() => this.props.deleteItem(this.props.savedArt.id)}>
+                      Remove from List
+                    </Button>
+                   {/*  </CardBody> */}
+                    </Card>
                 </div>
               )
           }
@@ -66,19 +67,13 @@ export default class MySavedArt extends Component {
             //filter savedArt: boolean=true, userId in database.json matches current session user
             savedArt.visited === true && savedArt.userId === sessionStorage.getItem("User"))
               .map(savedArt =>
-                //want to add SavedArtCard here
+                //add HaveVisitedCard here
+
                 <Card className="have-visited" key={savedArt.id}>{savedArt.title}</Card>
-                )
+              )
               
-            /* this.props.savedArt.map(savedArt => {
-              //console.log(savedArt)
-              if(savedArt.visited === true) {
-                return <div className="listCard" key={savedArt.id}>
-                  <Card>           
-                    <Link className="to-details-page" to={`/browse/${savedArt.title}`}>{savedArt.title}</Link>
-                  </Card>
-                </div> */
-        } 
+           
+        }
         </section>
       </React.Fragment>
     )
