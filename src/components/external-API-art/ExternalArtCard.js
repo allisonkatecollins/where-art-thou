@@ -39,7 +39,7 @@ export default class ExternalArtCard extends Component {
            
                       <Button outline color="info" onClick={this.toggle} style={{ marginBottom: '.5rem' }}>Details</Button>
                         <Collapse isOpen={this.state.collapse}>
-                            <CardBody className="details-expand">
+                            <CardBody className="details-expand pb-0">
                               <p>Artist: {art.first_name} {art.last_name}</p>
                               <p>{art.location}</p>
                               <p>{art.type}</p>

@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom'
 import { Button, Card, CardBody } from 'reactstrap'
 import "./Lists.css"
 export default class MySavedArt extends Component {
- /*  state = {
-    complete: false
+  //do not delete this
+  state = {
+    visited: false
   }
-   */
+  
   render() {
     return(
       <React.Fragment>
@@ -35,7 +36,7 @@ export default class MySavedArt extends Component {
                     <CardBody className="to-visit">{savedArt.title}
                         <img className="card-image" width="100%" src="/photos/cool-fences.jpg" alt="public art" />
                         
-                        <Button color="info" size="sm" 
+                        <Button className="mr-2" color="info" size="sm" 
                             //on click of button - change value of visited to false
                             //art item should move to "Have Visited" list
                               onClick={() => {

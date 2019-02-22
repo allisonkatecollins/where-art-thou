@@ -41,6 +41,12 @@
       "username": "charmander",
       "password": "123",
       "id": 7
+    },
+    {
+      "name": "allison",
+      "username": "newnew",
+      "password": "123",
+      "id": 8
     }
   ],
   "savedArt": [
@@ -76,18 +82,22 @@
       "id": 45
     },
     {
+      "title": "Beautiful Decay",
+      "visited": true,
       "userId": "1",
-      "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": false,
-      "id": 46
+      "id": 47
     },
     {
+      "title": "Aerial Innovations Mural",
+      "visited": true,
       "userId": "1",
-      "title": "Beautiful Decay",
-      "rating": 0,
-      "visited": false,
-      "id": 47
+      "id": 48
+    },
+    {
+      "title": "St. George and the Maiden",
+      "visited": true,
+      "userId": "1",
+      "id": 49
     }
   ],
   "photos": [
