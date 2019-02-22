@@ -23,7 +23,8 @@
 }
 
 .details-card {
-  overflow: auto
+  overflow: auto;
+  margin-bottom: 0px
 }
 
 .addBtn {

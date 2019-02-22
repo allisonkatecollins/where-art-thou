@@ -33,7 +33,7 @@ export default class ExternalArtCard extends Component {
                 </Card>
               </Collapse>           
 
-            <Button color="info" size="sm" 
+            <Button className="pr-1" color="info" size="sm" 
               //on click of button - change value of visited to false
               //art item should move to "Have Visited" list
               onClick={() => {

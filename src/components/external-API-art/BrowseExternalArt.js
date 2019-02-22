@@ -26,8 +26,8 @@ export default class BrowseExternalArt extends Component {
           //loop through all object in external API and render ExternalArtCard component for each one
           //"art" is the external API, "photos" is an array in database.json
           this.props.art.map(art => 
-            <Col>
-            <Card className="allArt" key={art.title}>
+            <Col key={art.title}>
+            <Card className="allArt">
             <ExternalArtCard photos={this.props.photos} art={art}/>
             
             {/* addToList is defined in ApplicationViews and calls a user-dependent POST fetch */}
