@@ -58,10 +58,9 @@
       "id": 49
     },
     {
-      "userId": "1",
       "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": "1",
       "id": 50
     },
     {
@@ -72,17 +71,9 @@
       "id": 51
     },
     {
-      "userId": "1",
-      "title": "Gold Star Monument to World War I Veterans",
-      "rating": 0,
-      "visited": false,
-      "id": 52
-    },
-    {
-      "userId": "1",
       "title": "Tommy Owen",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": "1",
       "id": 53
     }
   ],

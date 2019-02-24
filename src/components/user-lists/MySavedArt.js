@@ -3,15 +3,35 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card } from 'reactstrap'
 import "./Lists.css"
-import ToVisitCard from './ToVisitCard'
+import PhotoManager from './../../modules/PhotoManager'
+//import ExternalArtManager from './../../modules/ExternalArtManager'
+//import ToVisitCard from './ToVisitCard'
 //import HaveVisitedCard from './HaveVisitedCard'
 export default class MySavedArt extends Component {
   //do not delete this
   state = {
     visited: false
   }
+
+  componentDidMount(){
+    PhotoManager.getAllPhotos().then(artPhoto=> {
+      console.log("artPhoto:",artPhoto)
+       this.setState({
+         photos: artPhoto
+       })
+     })
+
+    /* ExternalArtManager.getAll(this.props.art.location).then(artToSave => {
+      this.setState({
+        art: artToSave
+      })
+      console.log("art:",this.state.art.location)
+    })
+   */
+  }
   
   render() {
+    //console.log("uhhhh:",this.state.art.location)
     return(
       <React.Fragment>
 
@@ -24,42 +44,53 @@ export default class MySavedArt extends Component {
             this.props.history.push("/")}}>Log Out</Button>
 
         <h2>TO VISIT</h2>
-        <section className="artToVisit">
+        <section className="artToVisit"/>
           {
             this.props.savedArt.filter(savedArt =>
               //filter savedArt: has not been visited, userId in database.json matches current session user
               savedArt.visited === false && savedArt.userId === sessionStorage.getItem("User"))
-              //loop through savedArt array, generate card for each item
-              //need to insert SavedArtCard here
-              .map(savedArt => 
-                <div className="card" key={savedArt.id}>
-                    <Card className="to-visit">
-                      {/* <CardBody> */}
-                      <ToVisitCard photos={this.props.photos} savedArt={savedArt} art={this.props.art}/>
-                        
-                      <Button className="mr-1" color="info" size="sm" 
-                      //on click of button - change value of visited to false
-                      //art item should move to "Have Visited" list
-                      onClick={() => {
-                        const visitedArt = {
-                        title: this.props.savedArt.title,
-                        visited: !this.state.visited,
-                        userId: sessionStorage.getItem("User")
-                        }
-                        this.props.updateList(this.props.savedArt.id, visitedArt)}}>I've been here!
-                    </Button>
+              
+                 .map(savedArt => 
+                  <div className="card" key={savedArt.id}>
+                        <Card className="to-visit">
 
-                    <Button color="warning" size="sm"
-                      //on click of button - remove item from "To Visit" list
-                      onClick={() => this.props.deleteItem(this.props.savedArt.id)}>
-                      Remove from List
-                    </Button>
-                   {/*  </CardBody> */}
-                    </Card>
-                </div>
-              )
-          }
-        </section>
+
+                          <h4>{savedArt.title}</h4>
+                          {/* <CardBody> */}
+
+                        {this.props.photos.map(currentPhoto => 
+                        {
+                          if (savedArt.title === currentPhoto.title) {
+                          return <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />
+                        }})
+                      } 
+                            
+                          <Button className="mr-1" color="info" size="sm" 
+                          //on click of button - change value of visited to false
+                          //art item should move to "Have Visited" list
+                          onClick={() => {
+                            const visitedArt = {
+                            title: savedArt.title,
+                            visited: !this.state.visited,
+                            userId: sessionStorage.getItem("User")
+                            }
+                            this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
+                        </Button>
+
+                        <Button color="secondary" size="sm"
+                          //on click of button - remove item from "To Visit" list
+                          onClick={() => this.props.deleteItem(savedArt.id)}>
+                          Remove from List
+                        </Button>
+                      {/*  </CardBody> */}
+
+                        </Card>
+                    </div>
+                
+                  )}
+          
+              
+
         <section className="artHaveVisited">
         <h2>HAVE VISITED</h2>
         {
@@ -75,7 +106,6 @@ export default class MySavedArt extends Component {
            
         }
         </section>
-      </React.Fragment>
+    </React.Fragment>
     )
-  }
-}
+  }}
