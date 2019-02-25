@@ -58,31 +58,15 @@
       "id": 49
     },
     {
-      "userId": "1",
-      "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": false,
-      "id": 50
-    },
-    {
-      "userId": "1",
-      "title": "St. George and the Maiden",
-      "rating": 0,
-      "visited": false,
-      "id": 51
-    },
-    {
-      "userId": "1",
       "title": "Wind Reeds",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": "1",
       "id": 52
     },
     {
-      "userId": "1",
       "title": "Coach Ed Temple",
-      "rating": 0,
-      "visited": false,
+      "visited": true,
+      "userId": "1",
       "id": 53
     },
     {
@@ -92,11 +76,52 @@
       "id": 54
     },
     {
-      "userId": "1",
       "title": "A Splash of Color",
+      "visited": true,
+      "userId": "1",
+      "id": 55
+    },
+    {
+      "userId": "1",
+      "title": "Isabelle and Calvin",
       "rating": 0,
       "visited": false,
-      "id": 55
+      "id": 56
+    },
+    {
+      "userId": "1",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 57
+    },
+    {
+      "userId": "1",
+      "title": "Confederate Private Monument",
+      "rating": 0,
+      "visited": false,
+      "id": 58
+    },
+    {
+      "userId": "1",
+      "title": "Gold Star Monument to World War I Veterans",
+      "rating": 0,
+      "visited": false,
+      "id": 59
+    },
+    {
+      "userId": "1",
+      "title": "President Andrew Johnson",
+      "rating": 0,
+      "visited": false,
+      "id": 60
+    },
+    {
+      "userId": "1",
+      "title": "Edward Ward Carmack",
+      "rating": 0,
+      "visited": false,
+      "id": 61
     }
   ],
   "photos": [

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 import Login from "./authentication/Login";
 import Registration from "./authentication/Registration";
@@ -128,19 +128,29 @@ export default class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/home" render={(props) => {
+          if (this.isAuthenticated()) {
           return <LandingPage {...props} 
-          users={this.state.users} />
+          users={this.state.users} 
+          />
+          } else {
+            return <Redirect to="/" />
+          }
         }} />
 
         <Route exact path="/browse" render={(props) => {
+          if (this.isAuthenticated()) {
           return <BrowseExternalArt {...props} 
           photos={this.state.photos}
           art={this.state.art}
           addToList={this.addToList}
           userId={this.state.userId}  />
+          } else {
+            return <Redirect to="/" />
+          }
         }} />
 
         <Route exact path="/lists" render={(props) => {
+          if (this.isAuthenticated()) {
           return <MySavedArt {...props}
           art={this.state.art} 
           savedArt={this.state.savedArt}
@@ -148,6 +158,9 @@ export default class ApplicationViews extends Component {
           updateList={this.updateList}
           deleteItem={this.deleteItem} 
           userId={this.state.userId}/>
+          } else {
+            return <Redirect to="/" />
+          }
         }} />
 
       </React.Fragment>
