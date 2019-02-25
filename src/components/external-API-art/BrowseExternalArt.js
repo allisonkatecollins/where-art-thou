@@ -12,20 +12,22 @@ export default class BrowseExternalArt extends Component {
     
       return(
         <React.Fragment>
-          <div>
+          <div className="d-flex justify-content-between">
             <img className="imgStyle" src={Logo} alt="icon"/> 
-          </div>
 
             <div>
-              <Link to="/lists">
-                <Button className="sticky-top" color="info">Back to Saved Art</Button>
-              </Link>
-              
-              <Button className="logoutBtn" color="secondary" onClick={() => {
+            <Button className="logoutBtn" color="secondary" onClick={() => {
                 sessionStorage.clear()  
                 this.props.history.push("/")}}>Log Out</Button>
+            </div>
+          </div>
+
+            <div className="sticky-top" >
+              <Link to="/lists">
+                <Button color="info">Back to Saved Art</Button>
+              </Link>
             </div> 
-            
+              
 
           <h2>BROWSE ALL ART</h2>
 
