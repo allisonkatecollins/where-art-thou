@@ -27,11 +27,11 @@ export default class BrowseExternalArt extends Component {
           //"art" is the external API, "photos" is an array in database.json
           this.props.art.map(art => 
             <Col key={art.title}>
-            <Card className="allArt">
+            <Card className="allArt" >
             <ExternalArtCard photos={this.props.photos} art={art}/>
             
             {/* addToList is defined in ApplicationViews and calls a user-dependent POST fetch */}
-              <Button className="addBtn" outline color="warning" onClick={() => 
+              <Button className="addBtn" outline color="secondary" onClick={() => 
                 this.props.addToList((this.props.userId), (art.title))}>Add to List   
               </Button>
 

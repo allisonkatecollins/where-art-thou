@@ -6,14 +6,14 @@ export default class LandingPage extends Component {
   render() {
       return (
         <React.Fragment>
-          <Jumbotron>
+          <Jumbotron className="jumbotron1 fluid">
             <Container> 
               <h1>
                 <Link className="browse-link" to="/browse">BROWSE</Link>
               </h1>
             </Container>
           </Jumbotron>
-          <Jumbotron>
+          <Jumbotron className="jumbotron2 fluid">
             <Container> 
               <h1>
                 <Link className="lists-link" to="/lists">MY SAVED ART</Link>

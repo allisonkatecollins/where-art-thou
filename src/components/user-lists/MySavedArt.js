@@ -2,7 +2,7 @@
 //checkbox functionality
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card, CardBody } from 'reactstrap'
+import { Button, Card, CardBody, Col } from 'reactstrap'
 import "./Lists.css"
 export default class MySavedArt extends Component {
   //do not delete this
@@ -32,7 +32,8 @@ export default class MySavedArt extends Component {
               //need to insert SavedArtCard here
               .map(savedArt => 
                 <div className="listCard" key={savedArt.id}>
-                  <Card>
+                <Col>
+                  <Card className="mb-4">
                     <CardBody className="to-visit">{savedArt.title}
                         <img className="card-image" width="100%" src="/photos/cool-fences.jpg" alt="public art" />
                         
@@ -48,13 +49,14 @@ export default class MySavedArt extends Component {
                                 //updateList defined in ApplicationViews, calls PUT fetch
                                 this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
                         </Button>
-                        <Button color="warning" size="sm"
+                        <Button color="secondary" size="sm"
                             //on click of button - remove item from "To Visit" list
                               onClick={() => this.props.deleteItem(savedArt.id)}>
                                 Remove from List
                         </Button>
                     </CardBody>
                   </Card>
+                </Col>
                 </div>
               )
           }

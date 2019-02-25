@@ -98,6 +98,47 @@
       "visited": true,
       "userId": "1",
       "id": 49
+    },
+    {
+      "userId": "1",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 50
+    },
+    {
+      "userId": "1",
+      "title": "St. George and the Maiden",
+      "rating": 0,
+      "visited": false,
+      "id": 51
+    },
+    {
+      "userId": "1",
+      "title": "Wind Reeds",
+      "rating": 0,
+      "visited": false,
+      "id": 52
+    },
+    {
+      "userId": "1",
+      "title": "Coach Ed Temple",
+      "rating": 0,
+      "visited": false,
+      "id": 53
+    },
+    {
+      "title": "Entry Archway",
+      "visited": true,
+      "userId": "1",
+      "id": 54
+    },
+    {
+      "userId": "1",
+      "title": "A Splash of Color",
+      "rating": 0,
+      "visited": false,
+      "id": 55
     }
   ],
   "photos": [

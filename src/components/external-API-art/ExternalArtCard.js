@@ -33,7 +33,7 @@ export default class ExternalArtCard extends Component {
            //title from API must exactly match title in database.json in order for jpgLink to be accessed
             {
               if (art.title === currentPhoto.title) {
-              return <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />
+              return <img key={currentPhoto.title} className="browse-image rounded" width="100%" src={currentPhoto.jpgLink} alt="public art" />
             }}
             )}
            

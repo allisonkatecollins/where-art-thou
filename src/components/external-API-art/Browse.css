@@ -1,4 +1,12 @@
+.jumbotron1 {
+  background: url("/photos/dragonwall2.jpg") no-repeat;
+  background-size: cover
+}
 
+.jumbotron2 {
+  background: url("/photos/rolfmural2.jpg") no-repeat;
+  background-size: cover
+}
 
 .allArt {
   display: flex table-row;
@@ -14,12 +22,16 @@
   width: 250px
 } */
 
-/* .card-body {
-  width: 300px
-} */
+.card-body {
+  padding-right: 50px
+}
 
+/* .browse-link {
+  color: black
+}
+ */
 .details-expand { 
-  overflow: auto
+  overflow: visible
 }
 
 .details-card {
