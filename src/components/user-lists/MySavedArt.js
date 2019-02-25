@@ -1,8 +1,9 @@
 //connects have visited and to visit
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card, Col } from 'reactstrap'
+import { Button, Card, CardBody, Col } from 'reactstrap'
 import "./Lists.css"
+import Logo from "./Logo.png"
 import ToVisitCard from './ToVisitCard'
 //import HaveVisitedCard from './HaveVisitedCard'
 export default class MySavedArt extends Component {
@@ -25,6 +26,9 @@ export default class MySavedArt extends Component {
     console.log("artprops:", this.props.art)
     return(
       <React.Fragment>
+        <div>
+            <img className="imgStyle" src={Logo} alt="icon"/> 
+          </div>
 
         <Link className="backBtn" to="/browse">
             <Button color="info">Back to Browse</Button>
@@ -50,8 +54,6 @@ export default class MySavedArt extends Component {
                           <h4>{savedArt.title}</h4>
 
                           {this.getCard(savedArt)}
-                        
-                          {/* <CardBody> */}
                             
                           <Button className="mr-1" color="info" size="sm" 
                           //on click of button - change value of visited to false
@@ -64,22 +66,16 @@ export default class MySavedArt extends Component {
                             }
                             this.props.updateList(savedArt.id, visitedArt)}}>I've been here!
                         </Button>
-
                         <Button color="secondary" size="sm"
-                          //on click of button - remove item from "To Visit" list
-                          onClick={() => this.props.deleteItem(savedArt.id)}>
-                          Remove from List
+                            //on click of button - remove item from "To Visit" list
+                              onClick={() => this.props.deleteItem(savedArt.id)}>
+                                Remove from List
                         </Button>
-                      {/*  </CardBody> */}
-
-                        </Card>
-                    </div>
-                    </Col>
-                  )}
-
-          
-              
-
+                  </Card>
+                </div>
+                </Col>
+              )
+          }
         <section className="artHaveVisited">
         <h2>HAVE VISITED</h2>
         {

@@ -58,29 +58,27 @@
       "id": 49
     },
     {
-      "title": "Roy Orbison Tribute Statue",
+      "title": "Wind Reeds",
       "visited": true,
       "userId": "1",
-      "id": 50
+      "id": 52
     },
     {
-      "title": "Tommy Owen",
+      "title": "Coach Ed Temple",
       "visited": true,
       "userId": "1",
       "id": 53
     },
     {
+      "title": "Entry Archway",
+      "visited": true,
       "userId": "1",
-      "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": false,
       "id": 54
     },
     {
+      "title": "A Splash of Color",
+      "visited": true,
       "userId": "1",
-      "title": "King John of England, Moses, Justinian of Rome, Justice",
-      "rating": 0,
-      "visited": false,
       "id": 55
     },
     {
@@ -92,7 +90,7 @@
     },
     {
       "userId": "1",
-      "title": "Confluence",
+      "title": "Roy Orbison Tribute Statue",
       "rating": 0,
       "visited": false,
       "id": 57
@@ -103,6 +101,27 @@
       "rating": 0,
       "visited": false,
       "id": 58
+    },
+    {
+      "userId": "1",
+      "title": "Gold Star Monument to World War I Veterans",
+      "rating": 0,
+      "visited": false,
+      "id": 59
+    },
+    {
+      "userId": "1",
+      "title": "President Andrew Johnson",
+      "rating": 0,
+      "visited": false,
+      "id": 60
+    },
+    {
+      "userId": "1",
+      "title": "Edward Ward Carmack",
+      "rating": 0,
+      "visited": false,
+      "id": 61
     }
   ],
   "photos": [
