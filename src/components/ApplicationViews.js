@@ -8,7 +8,6 @@ import ExternalArtManager from "../modules/ExternalArtManager";
 import BrowseExternalArt from "./external-API-art/BrowseExternalArt";
 import SavedArtManager from "../modules/SavedArtManager";
 import MySavedArt from "./user-lists/MySavedArt" 
-//import ExternalArtDetails from "./external-API-art/ExternalArtDetails"
 import PhotoManager from "../modules/PhotoManager"
 
 export default class ApplicationViews extends Component {
@@ -42,7 +41,6 @@ export default class ApplicationViews extends Component {
       this.setState({
         users: allUsers
       })
-      console.log("componentDidMount:", this.state.users)
     })
 
     PhotoManager.getAllPhotos().then(artPhoto=> {
@@ -63,7 +61,6 @@ export default class ApplicationViews extends Component {
     LoginManager.getUsers(username, password)
   } */
 
-  //do I need to pass "users"? doesn't seem to make a difference if I remove the string
   getUsers = () => {
     return LoginManager.getUsers("users")
   } 
@@ -143,16 +140,11 @@ export default class ApplicationViews extends Component {
           userId={this.state.userId}  />
         }} />
 
-       {/*  <Route exact path="/browse/:title" render={(props) => {
-          return( <ExternalArtDetails {...props}
-          art={this.state.art}
-          addToList={this.addToList} />)
-        }} />  */}
-
         <Route exact path="/lists" render={(props) => {
           return <MySavedArt {...props}
           art={this.state.art} 
           savedArt={this.state.savedArt}
+          photos={this.state.photos}
           updateList={this.updateList}
           deleteItem={this.deleteItem} 
           userId={this.state.userId}/>
