@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, CardBody, Col } from 'reactstrap'
 import "./Lists.css"
+import Logo from "./Logo.png"
 export default class MySavedArt extends Component {
   //do not delete this
   state = {
@@ -13,6 +14,9 @@ export default class MySavedArt extends Component {
   render() {
     return(
       <React.Fragment>
+        <div>
+            <img className="imgStyle" src={Logo} alt="icon"/> 
+          </div>
 
         <Link className="backBtn" to="/browse">
             <Button color="info">Back to Browse</Button>

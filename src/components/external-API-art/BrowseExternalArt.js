@@ -3,20 +3,29 @@ import { Link } from 'react-router-dom'
 import "./Browse.css"
 import { Button, Card, Row, Col } from 'reactstrap';
 import ExternalArtCard from './ExternalArtCard';
-
+import Logo from './Logo.png'
   
 export default class BrowseExternalArt extends Component {
-    render() {
+
+  
+  render() {
+    
       return(
         <React.Fragment>
+          <div>
+            <img className="imgStyle" src={Logo} alt="icon"/> 
+          </div>
 
-          <Link to="/lists">
-            <Button className="sticky-top" color="info">Back to Saved Art</Button>
-          </Link>
-          
-          <Button className="logoutBtn" color="secondary" onClick={() => {
-            sessionStorage.clear()  
-            this.props.history.push("/")}}>Log Out</Button>
+            <div>
+              <Link to="/lists">
+                <Button className="sticky-top" color="info">Back to Saved Art</Button>
+              </Link>
+              
+              <Button className="logoutBtn" color="secondary" onClick={() => {
+                sessionStorage.clear()  
+                this.props.history.push("/")}}>Log Out</Button>
+            </div> 
+            
 
           <h2>BROWSE ALL ART</h2>
 

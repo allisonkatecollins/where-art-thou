@@ -43,3 +43,8 @@
   width: 300px;
   justify-content: center
 }
+
+.imgStyle {
+  width: 300px;
+  height: 100%;
+}
