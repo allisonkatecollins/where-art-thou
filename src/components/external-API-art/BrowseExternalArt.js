@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "./Browse.css"
 import { Button, Card, Row, Col } from 'reactstrap';
 import ExternalArtCard from './ExternalArtCard';
+import ToVisitCard from "../user-lists/ToVisitCard"
 
   
 export default class BrowseExternalArt extends Component {

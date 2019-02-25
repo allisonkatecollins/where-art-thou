@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card } from 'reactstrap'
 import "./Lists.css"
-import PhotoManager from './../../modules/PhotoManager'
+//import PhotoManager from './../../modules/PhotoManager'
 //import ExternalArtManager from './../../modules/ExternalArtManager'
-//import ToVisitCard from './ToVisitCard'
+import ToVisitCard from './ToVisitCard'
 //import HaveVisitedCard from './HaveVisitedCard'
 export default class MySavedArt extends Component {
   //do not delete this
@@ -13,25 +13,28 @@ export default class MySavedArt extends Component {
     visited: false
   }
 
-  componentDidMount(){
-    PhotoManager.getAllPhotos().then(artPhoto=> {
-      console.log("artPhoto:",artPhoto)
-       this.setState({
-         photos: artPhoto
-       })
-     })
-
-    /* ExternalArtManager.getAll(this.props.art.location).then(artToSave => {
-      this.setState({
-        art: artToSave
-      })
-      console.log("art:",this.state.art.location)
+ /*  artToVisit = () => {
+    let art = this.props.art.find(art => {
+      console.log("art to visit:", art)
+      return (art.title === this.props.savedArt.title)
     })
-   */
+  return art 
+    
+  } */
+
+  getCard = (savedArt) => {
+    if (this.props.art.length !== 0) {
+      return this.props.art.filter(artObj => artObj.title === savedArt.title).map(artObj =>
+        <ToVisitCard art={artObj} savedArt={savedArt}/>
+      )
+    }
+                            
   }
+
   
   render() {
-    //console.log("uhhhh:",this.state.art.location)
+    //this.artToVisit()
+    console.log("artprops:", this.props.art)
     return(
       <React.Fragment>
 
@@ -54,16 +57,24 @@ export default class MySavedArt extends Component {
                   <div className="card" key={savedArt.id}>
                         <Card className="to-visit">
 
-
                           <h4>{savedArt.title}</h4>
+
+                          {/* {
+                            this.props.art.length !== 0 && savedArt.title === this.props.art.title ? 
+                            <ToVisitCard art={this.props.art} savedArt={savedArt}/> :
+                            "test"
+                          } */}
+
+                          {this.getCard(savedArt)}
+                        
                           {/* <CardBody> */}
 
-                        {this.props.photos.map(currentPhoto => 
+                       {/*  {this.props.photos.map(currentPhoto => 
                         {
                           if (savedArt.title === currentPhoto.title) {
                           return <img key={currentPhoto.title} className="browse-image" width="100%" src={currentPhoto.jpgLink} alt="public art" />
-                        }})
-                      } 
+                        }}) 
+                      } */}
                             
                           <Button className="mr-1" color="info" size="sm" 
                           //on click of button - change value of visited to false

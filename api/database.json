@@ -64,17 +64,31 @@
       "id": 50
     },
     {
-      "userId": "1",
-      "title": "St. George and the Maiden",
-      "rating": 0,
-      "visited": false,
-      "id": 51
-    },
-    {
       "title": "Tommy Owen",
       "visited": true,
       "userId": "1",
       "id": 53
+    },
+    {
+      "userId": "1",
+      "title": "Roy Orbison Tribute Statue",
+      "rating": 0,
+      "visited": false,
+      "id": 54
+    },
+    {
+      "userId": "1",
+      "title": "King John of England, Moses, Justinian of Rome, Justice",
+      "rating": 0,
+      "visited": false,
+      "id": 55
+    },
+    {
+      "userId": "1",
+      "title": "Isabelle and Calvin",
+      "rating": 0,
+      "visited": false,
+      "id": 56
     }
   ],
   "photos": [
