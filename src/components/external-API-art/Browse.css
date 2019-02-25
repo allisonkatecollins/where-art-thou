@@ -2,8 +2,7 @@
 
 .allArt {
   display: flex table-row;
-  margin-right: 70%;
-  background-color: rgb(206, 182, 195)
+  margin-right: 70%
 }  
 
 .external-art-card {

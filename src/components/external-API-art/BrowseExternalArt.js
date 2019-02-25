@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import "./Browse.css"
 import { Button, Card, Row, Col } from 'reactstrap';
-import ExternalArtCard from './ExternalArtCard';
-import ToVisitCard from "../user-lists/ToVisitCard"
+import ExternalArtCard from './ExternalArtCard'
 
   
 export default class BrowseExternalArt extends Component {
