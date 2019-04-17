@@ -7,3 +7,12 @@ Where Art Thou? operates on a user-generated JSON database as well as the ["Art 
 Users are able to make accounts using session storage, then browse all the art from the API and save particular works to a "To Visit" or "Have Visited" list. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Testing Locally
+
+1. Clone this repo: `git@github.com:allisonkatecollins/where-art-thou.git`
+1. To install all libraries and their dependencies, run `npm install`
+1. In the `/api` directory, run `json-server -p 5002 database.json`
+1. Run `npm start` in root directory to start react server
+
+
