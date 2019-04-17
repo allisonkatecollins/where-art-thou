@@ -1,3 +1,7 @@
+<img src="./public/logo.png" alt="Where Art Thou?" title="Where Art Thou?" width="500px">
+
+<img src="./public/screenshot.png" alt="Screenshot" title="Where Art Thou?" width="1000px">
+
 # Where Art Thou?
 
 This single page, Nashville-specific app was designed to give both residents and tourists a tool to find public art throughout the city - either as a means to explore new parts of the city, learn about local history, support local artists, or find backdrops for social media posts. The app is meant to be at least as beneficial to the artists who created each work, as details about each work's artist or artists is displayed with the work. This increases artist visibility as well as giving art and history buffs an opportunity to explore Nashville. 
@@ -14,5 +18,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. To install all libraries and their dependencies, run `npm install`
 1. In the `/api` directory, run `json-server -p 5002 database.json`
 1. Run `npm start` in root directory to start react server
-
-

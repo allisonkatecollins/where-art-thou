@@ -15,43 +15,6 @@
   ],
   "savedArt": [
     {
-      "userId": "2",
-      "title": "Hillsboro Village Mural",
-      "rating": 0,
-      "visited": false,
-      "id": 24
-    },
-    {
-      "title": "Founding Fathers Cenotaph",
-      "visited": true,
-      "userId": "2",
-      "id": 32
-    },
-    {
-      "title": "Confluence",
-      "visited": true,
-      "userId": "1",
-      "id": 36
-    },
-    {
-      "title": "Roy Orbison Tribute Statue",
-      "visited": true,
-      "userId": "1",
-      "id": 38
-    },
-    {
-      "title": "Beautiful Decay",
-      "visited": true,
-      "userId": "1",
-      "id": 47
-    },
-    {
-      "title": "Aerial Innovations Mural",
-      "visited": true,
-      "userId": "1",
-      "id": 48
-    },
-    {
       "title": "St. George and the Maiden",
       "visited": true,
       "userId": "1",
@@ -70,58 +33,17 @@
       "id": 53
     },
     {
-      "title": "Entry Archway",
+      "title": "Hillsboro Village Mural",
       "visited": true,
       "userId": "1",
       "id": 54
     },
     {
-      "title": "A Splash of Color",
-      "visited": true,
       "userId": "1",
-      "id": 55
-    },
-    {
-      "userId": "1",
-      "title": "Isabelle and Calvin",
+      "title": "Timothy Demonbreun",
       "rating": 0,
       "visited": false,
       "id": 56
-    },
-    {
-      "userId": "1",
-      "title": "Roy Orbison Tribute Statue",
-      "rating": 0,
-      "visited": false,
-      "id": 57
-    },
-    {
-      "userId": "1",
-      "title": "Confederate Private Monument",
-      "rating": 0,
-      "visited": false,
-      "id": 58
-    },
-    {
-      "userId": "1",
-      "title": "Gold Star Monument to World War I Veterans",
-      "rating": 0,
-      "visited": false,
-      "id": 59
-    },
-    {
-      "userId": "1",
-      "title": "President Andrew Johnson",
-      "rating": 0,
-      "visited": false,
-      "id": 60
-    },
-    {
-      "userId": "1",
-      "title": "Edward Ward Carmack",
-      "rating": 0,
-      "visited": false,
-      "id": 61
     }
   ],
   "photos": [
