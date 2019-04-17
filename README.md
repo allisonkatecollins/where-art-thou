@@ -1,4 +1,4 @@
-<img src="./public/logo.png" alt="Where Art Thou?" title="Where Art Thou?" width="500px">
+<p align="center"><img src="./public/logo.png" alt="Where Art Thou?" title="Where Art Thou?" width="500px"></p>
 
 <img src="./public/screenshot.png" alt="Screenshot" title="Where Art Thou?" width="1000px">
 
